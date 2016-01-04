@@ -28,10 +28,10 @@ for group_id, group in enumerate(drug_db.config['tableOrder']):
     chart.add_cell(0, y_index+1, group_color) # top
     chart.add_cell(chart.item_count+1, y_index+1, group_color) # bottom
 
-    chart.add_label(drug_a, y_index+1, 0, 'white') # left
-    chart.add_label(drug_a, y_index+1, chart.item_count+1, drug_db.config['groupHeadingColours'][group_id]) #right
-    chart.add_label(drug_a, 0, y_index+1, 'white') # top
-    chart.add_label(drug_a, chart.item_count+1, y_index+1, drug_db.config['groupHeadingColours'][group_id]) # bottom
+    chart.add_label(drug_a, y_index+1, 0) # left
+    chart.add_label(drug_a, y_index+1, chart.item_count+1) #right
+    chart.add_label(drug_a, 0, y_index+1) # top
+    chart.add_label(drug_a, chart.item_count+1, y_index+1) # bottom
 
     x_index = 0
     for x_group_id, x_group in enumerate(drug_db.config['tableOrder']):

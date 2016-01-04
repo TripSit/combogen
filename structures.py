@@ -111,12 +111,12 @@ class ComboChart(svgwrite.Drawing):
 
     self.add(self.rect(pos, size, fill=color))
 
-  def add_label(self, text, y_index, x_index, text_style='fill:white'):
+  def add_label(self, text, y_index, x_index, color='white', text_style=None):
     x_pos = ComboChart.X_TABLE_MARGIN + x_index * (self.X_CELL_SIZE + ComboChart.CELL_MARGIN) + self.X_CELL_SIZE / 2
     y_pos = ComboChart.Y_TABLE_MARGIN + y_index * (self.Y_CELL_SIZE + ComboChart.CELL_MARGIN) + self.Y_CELL_SIZE * 0.75
     pos = (percent(x_pos), percent(y_pos))
 
-    self.add(self.text(text, pos, text_anchor='middle', style=text_style))
+    self.add(self.text(text, pos, text_anchor='middle', fill=color, style=text_style))
 
   def add_legend(self):
     pass
