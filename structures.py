@@ -25,8 +25,8 @@ class DrugDatabase(object):
 
   def populate(self):
     self._database = OrderedDict(requests.get(DrugDatabase.URL).json()) #type: OrderedDict
-    config_file = open(DrugDatabase.CONFIG_FILE) 
-    self._config = json.load(config_file)
+    with open(DrugDatabase.CONFIG_FILE) as f:
+      self._config = json.load(f)
 
   def interaction(self, drug_a, drug_b):
     drug_a = drug_a.lower()
