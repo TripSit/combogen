@@ -60,6 +60,8 @@ class DrugDatabase(object):
     return (missing_in_config, missing_in_json)
 
 class ComboChart(svgwrite.Drawing):
+  LOGO_FILE = 'logo.svg'
+
   INTERACTION_SAFE_SYNERGY = 'Low Risk & Synergy'.lower()
   INTERACTION_SAFE_NO_SYNERGY = 'Low Risk & No Synergy'.lower()
   INTERACTION_SAFE_DECREASE = 'Low Risk & Decrease'.lower()
@@ -80,7 +82,6 @@ class ComboChart(svgwrite.Drawing):
     INTERACTION_UNKNOWN: 'white'
   }
 
-
   X_TABLE_MARGIN = 2
   Y_TABLE_MARGIN = 10
   CELL_MARGIN = 0.03
@@ -99,7 +100,7 @@ class ComboChart(svgwrite.Drawing):
       return ComboChart.INTERACTION_COLOR_MAP[ComboChart.INTERACTION_UNKNOWN]
 
   def add_logo(self):
-    with open('logo.svg') as f:
+    with open(ComboChart.LOGO_FILE) as f:
       logo = f.read().encode('utf-8')
       encoded = base64.b64encode(logo).decode('utf-8')
       dataURI = 'data:image/svg+xml;base64,{}'.format(encoded)
