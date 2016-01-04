@@ -52,4 +52,5 @@ for group_a_id, group_a in enumerate(drug_db.config['tableOrder']):
 
 
 chart.add_title()
+chart.add_logo()
 print(chart.tostring())

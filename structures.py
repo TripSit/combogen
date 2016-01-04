@@ -1,6 +1,7 @@
 import requests
 import svgwrite
 import json
+import base64
 from svgwrite import percent
 from collections import OrderedDict
 
@@ -97,8 +98,15 @@ class ComboChart(svgwrite.Drawing):
     except KeyError:
       return ComboChart.INTERACTION_COLOR_MAP[ComboChart.INTERACTION_UNKNOWN]
 
-  def add_logo(self, position, size):
-    pass
+  def add_logo(self):
+    with open('logo.svg') as f:
+      logo = f.read().encode('utf-8')
+      encoded = base64.b64encode(logo).decode('utf-8')
+      dataURI = 'data:image/svg+xml;base64,{}'.format(encoded)
+
+      position = (percent(ComboChart.X_TABLE_MARGIN), 0)
+      size = (percent(ComboChart.Y_TABLE_MARGIN), ) * 2
+      self.add(self.image(dataURI, position, size))
 
   def add_title(self, text="Guide to drug combinations", style="font-size:10mm;fill:white"):
     self.add(self.text(text, ('50%', '15mm'), text_anchor='middle', style=style))
