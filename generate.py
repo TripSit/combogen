@@ -15,10 +15,12 @@ y_index = 0
 for group_id, group in enumerate(drug_db.config['tableOrder']):
 
   for drug_a in group:
-    chart.add_cell(y_index+1, 0, drug_db.config['groupHeadingColours'][group_id]) # left
-    chart.add_cell(y_index+1, chart.item_count+1, drug_db.config['groupHeadingColours'][group_id]) #right
-    chart.add_cell(0, y_index+1, drug_db.config['groupHeadingColours'][group_id]) # top
-    chart.add_cell(chart.item_count+1, y_index+1, drug_db.config['groupHeadingColours'][group_id]) # bottom
+    group_color = drug_db.config['groupHeadingColours'][group_id]
+
+    chart.add_cell(y_index+1, 0, group_color) # left
+    chart.add_cell(y_index+1, chart.item_count+1, group_color) #right
+    chart.add_cell(0, y_index+1, group_color) # top
+    chart.add_cell(chart.item_count+1, y_index+1, group_color) # bottom
 
     chart.add_label(drug_a, y_index+1, 0, 'white') # left
     chart.add_label(drug_a, y_index+1, chart.item_count+1, drug_db.config['groupHeadingColours'][group_id]) #right
