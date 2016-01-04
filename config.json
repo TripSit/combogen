@@ -1,0 +1,46 @@
+{
+  "tableOrder": [
+    [
+      "Mushrooms",
+      "DMT",
+      "Mescaline",
+      "DOx",
+      "NBOMes",
+      "2C-x",
+      "2C-T-x",
+      "αMT",
+      "5-MeO-xxT",
+      "Cannabis"
+    ],
+    [
+      "Ketamine",
+      "MXE",
+      "DXM",
+      "Nitrous Oxide"
+    ],
+    [
+      "Amphetamines",
+      "MDMA",
+      "Cocaine",
+      "Caffeine"
+    ],
+    [
+      "Alcohol",
+      "GHB/GBL",
+      "Opioids",
+      "Tramadol",
+      "Benzodiazepines"
+    ],
+    [
+      "MAOIs",
+      "SSRIs"
+    ]
+  ],
+  "groupHeadingColours": [
+    "#274e13",
+    "#20124d",
+    "#660000",
+    "#073763",
+    "#783f04"
+  ]
+}
