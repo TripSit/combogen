@@ -6,6 +6,12 @@ from structures import DrugDatabase, ComboChart
 drug_db = DrugDatabase()
 drug_db.populate()
 
+# Find missing drugs from either config or JSON
+database_diff = drug_db.find_missing()
+print("Drugs missing from config: " + str(database_diff[0]))
+print("Drugs missing from JSON: " + str(database_diff[1]))
+
+
 DOUBLE_A4 = ('594mm', '210mm')
 
 chart = ComboChart(drug_db, size=DOUBLE_A4)

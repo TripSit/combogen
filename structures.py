@@ -42,6 +42,21 @@ class DrugDatabase(object):
     except KeyError:
       return DrugDatabase.RESPONSE_UNKNOWN_DRUG
 
+  def find_missing(self):
+    missing_in_config = []
+    missing_in_json = []
+
+    for group in self.config['tableOrder']:
+      for drug in group:
+        missing_in_json.append(drug.lower())
+
+    for drug in self.database.keys():
+      try:
+        missing_in_json.remove(drug.lower())
+      except ValueError:
+        missing_in_config.append(drug.lower())
+
+    return (missing_in_config, missing_in_json)
 
 class ComboChart(svgwrite.Drawing):
   INTERACTION_SAFE_SYNERGY = 'Low Risk & Synergy'.lower()
