@@ -28,6 +28,8 @@ class DrugDatabase(object):
     self._config = json.load(config_file)
 
   def interaction(self, drug_a, drug_b):
+    drug_a = drug_a.lower()
+    drug_b = drug_b.lower()
     try:
       return self._database[drug_a][drug_b]['status']
     except KeyError:
