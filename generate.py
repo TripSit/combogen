@@ -13,9 +13,10 @@ print("Drugs missing from JSON: " + str(database_diff[1]))
 
 
 DOUBLE_A4 = ('594mm', '210mm')
+ORIGINAL = ('3800px', '1600px')
 
 chart = ComboChart(drug_db, size=DOUBLE_A4)
-background = chart.add(chart.rect((0, 0), ('100%', '100%'), fill='#1C1C1C'))
+background = chart.add(chart.rect((0, 0), ('100%', '100%'), fill='#171717'))
 
 y_index = 0
 for group_a_id, group_a in enumerate(drug_db.config['tableOrder']):
