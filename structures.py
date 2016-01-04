@@ -87,7 +87,7 @@ class ComboChart(svgwrite.Drawing):
   def __init__(self, database, filename="drug-combinations.svg", size=('100%', '100%'), **extra):
     super(ComboChart, self).__init__(filename, size, **extra)
     self._database = database
-    self.item_count = len(self._database.database)
+    self.item_count = sum(sum(1 for drug in category) for category in self._database.config['tableOrder'])
     self.X_CELL_SIZE = (100 - 2 * ComboChart.X_TABLE_MARGIN) / (self.item_count + 2) - ComboChart.CELL_MARGIN
     self.Y_CELL_SIZE = (100 - 2 * ComboChart.Y_TABLE_MARGIN) / (self.item_count + 2) - ComboChart.CELL_MARGIN
 
