@@ -108,8 +108,9 @@ class ComboChart(svgwrite.Drawing):
       size = (percent(ComboChart.Y_TABLE_MARGIN), ) * 2
       self.add(self.image(dataURI, position, size))
 
-  def add_title(self, text="Guide to drug combinations", style="font-size:10mm;fill:white"):
-    self.add(self.text(text, ('50%', '15mm'), text_anchor='middle', style=style))
+  def add_title(self, text="Guide to drug combinations", style="font-size:250%;fill:white"):
+    position = ('50%', percent(ComboChart.Y_TABLE_MARGIN * 0.75))
+    self.add(self.text(text, position, text_anchor='middle', style=style))
 
   def add_cell(self, y_index, x_index, color):
     x_pos = ComboChart.X_TABLE_MARGIN + x_index * (self.X_CELL_SIZE + ComboChart.CELL_MARGIN)
