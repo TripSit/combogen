@@ -18,10 +18,9 @@ chart = ComboChart(drug_db, size=DOUBLE_A4)
 background = chart.add(chart.rect((0, 0), ('100%', '100%'), fill='#1C1C1C'))
 
 y_index = 0
-for group_id, group in enumerate(drug_db.config['tableOrder']):
-
-  for drug_a in group:
-    group_color = drug_db.config['groupHeadingColours'][group_id]
+for group_a_id, group_a in enumerate(drug_db.config['tableOrder']):
+  for drug_a in group_a:
+    group_color = drug_db.config['groupHeadingColours'][group_a_id]
 
     chart.add_cell(y_index+1, 0, group_color) # left
     chart.add_cell(y_index+1, chart.item_count+1, group_color) #right
@@ -34,8 +33,8 @@ for group_id, group in enumerate(drug_db.config['tableOrder']):
     chart.add_label(drug_a, chart.item_count+1, y_index+1) # bottom
 
     x_index = 0
-    for x_group_id, x_group in enumerate(drug_db.config['tableOrder']):
-      for drug_b in x_group:
+    for group_b_id, group_b in enumerate(drug_db.config['tableOrder']):
+      for drug_b in group_b:
 
         if drug_a == drug_b:
           interaction_color = group_color
@@ -53,5 +52,4 @@ for group_id, group in enumerate(drug_db.config['tableOrder']):
 
 
 chart.add_title()
-
 print(chart.tostring())
