@@ -1,22 +1,31 @@
 import requests
 import svgwrite
+import json
 from svgwrite import percent
 from collections import OrderedDict
 
 class DrugDatabase(object):
+  CONFIG_FILE = "config.json"
   URL = "http://tripsit.me/combo_beta.json"
   RESPONSE_UNKNOWN_COMBO = "Unknown combination"
   RESPONSE_UNKNOWN_DRUG = "Unknown drug"
 
   def __init__(self):
     self._database = dict()
+    self._config = dict()
 
   @property
   def database(self):
     return self._database
 
+  @property
+  def config(self):
+    return self._config
+
   def populate(self):
     self._database = OrderedDict(requests.get(DrugDatabase.URL).json()) #type: OrderedDict
+    config_file = open(DrugDatabase.CONFIG_FILE) 
+    self._config = json.load(config_file)
 
   def interaction(self, drug_a, drug_b):
     try:

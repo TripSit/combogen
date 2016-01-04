@@ -3,7 +3,6 @@ from svgwrite import cm, mm, px, percent
 
 from structures import DrugDatabase, ComboChart
 
-
 drug_db = DrugDatabase()
 drug_db.populate()
 
