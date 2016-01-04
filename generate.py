@@ -38,7 +38,7 @@ for group_id, group in enumerate(drug_db.config['tableOrder']):
       for drug_b in x_group:
 
         if drug_a == drug_b:
-          interaction_color = 'black'
+          interaction_color = group_color
 
           chart.add_cell(y_index+1, x_index+1, interaction_color)
           chart.add_label(drug_a, y_index+1, x_index+1)
