@@ -84,7 +84,6 @@ class ComboChart(svgwrite.Drawing):
   X_TABLE_MARGIN = 2
   Y_TABLE_MARGIN = 10
   CELL_MARGIN = 0.03
-  LABEL_FONT_SIZE = 0.6
 
   def __init__(self, database, filename="drug-combinations.svg", size=('100%', '100%'), **extra):
     super(ComboChart, self).__init__(filename, size, **extra)
