@@ -8,15 +8,15 @@ drug_db.populate()
 
 # Find missing drugs from either config or JSON
 database_diff = drug_db.find_missing()
-print("Drugs missing from config: " + str(database_diff[0]))
-print("Drugs missing from JSON: " + str(database_diff[1]))
-
+#print("Drugs missing from config: " + str(database_diff[0]))
+#print("Drugs missing from JSON: " + str(database_diff[1]))
 
 DOUBLE_A4 = ('594mm', '210mm')
 ORIGINAL = ('3800px', '1600px')
 
 chart = ComboChart(drug_db, size=DOUBLE_A4)
-background = chart.add(chart.rect((0, 0), ('100%', '100%'), fill='#171717'))
+#background = chart.add(chart.rect((0, 0), ('100%', '100%'), fill='#171717'))
+background = chart.add(chart.rect((0, 0), ('100%', '100%'), fill='#000'))
 
 y_index = 0
 for group_a_id, group_a in enumerate(drug_db.config['tableOrder']):
@@ -54,4 +54,5 @@ for group_a_id, group_a in enumerate(drug_db.config['tableOrder']):
 
 chart.add_title()
 chart.add_logo()
+chart.add_legend()
 print(chart.tostring())
