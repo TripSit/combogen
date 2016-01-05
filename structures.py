@@ -127,15 +127,77 @@ class ComboChart(svgwrite.Drawing):
 
     self.add(self.text(text, pos, text_anchor='middle', fill=color, style=text_style))
 
+  # TODO: there is a bit much code repetition here
   def add_legend(self):
     x_pos = 70 - ComboChart.X_TABLE_MARGIN
     y_pos = ComboChart.Y_TABLE_MARGIN * 0.50
 
+    # Low Risk & Synergy
     pos = (percent(x_pos), percent(y_pos))
     size = (percent(self.X_CELL_SIZE), percent(self.Y_CELL_SIZE))
-    self.add(self.rect(pos, size, fill='#31b149'))
+    self.add(self.rect(pos, size, fill=self.INTERACTION_COLOR_MAP[self.INTERACTION_SAFE_SYNERGY]))
 
-    x_pos = x_pos + self.X_CELL_SIZE / 2
-    y_pos = y_pos + self.Y_CELL_SIZE * 0.75
-    pos = (percent(x_pos), percent(y_pos))
+    text_x_pos = x_pos + self.X_CELL_SIZE / 2
+    text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
+    pos = (percent(text_x_pos), percent(text_y_pos))
     self.add(self.text('Low Risk & Synergy', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+
+    # Low Risk & No Synergy
+    x_pos = x_pos + self.X_CELL_SIZE
+    pos = (percent(x_pos), percent(y_pos))
+    self.add(self.rect(pos, size, fill=self.INTERACTION_COLOR_MAP[self.INTERACTION_SAFE_NO_SYNERGY]))
+
+    text_x_pos = x_pos + self.X_CELL_SIZE / 2
+    text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
+    pos = (percent(text_x_pos), percent(text_y_pos))
+    self.add(self.text('Low Risk & No Synergy', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+
+    # Low Risk & Decrease
+    x_pos = x_pos + self.X_CELL_SIZE
+    pos = (percent(x_pos), percent(y_pos))
+    self.add(self.rect(pos, size, fill=self.INTERACTION_COLOR_MAP[self.INTERACTION_SAFE_DECREASE]))
+
+    text_x_pos = x_pos + self.X_CELL_SIZE / 2
+    text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
+    pos = (percent(text_x_pos), percent(text_y_pos))
+    self.add(self.text('Low Risk & Decrease', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+
+    # Caution
+    x_pos = x_pos + self.X_CELL_SIZE
+    pos = (percent(x_pos), percent(y_pos))
+    self.add(self.rect(pos, size, fill=self.INTERACTION_COLOR_MAP[self.INTERACTION_CAUTION]))
+
+    text_x_pos = x_pos + self.X_CELL_SIZE / 2
+    text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
+    pos = (percent(text_x_pos), percent(text_y_pos))
+    self.add(self.text('Caution', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+
+    # Unsafe
+    x_pos = x_pos + self.X_CELL_SIZE
+    pos = (percent(x_pos), percent(y_pos))
+    self.add(self.rect(pos, size, fill=self.INTERACTION_COLOR_MAP[self.INTERACTION_UNSAFE]))
+
+    text_x_pos = x_pos + self.X_CELL_SIZE / 2
+    text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
+    pos = (percent(text_x_pos), percent(text_y_pos))
+    self.add(self.text('Unsafe', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+
+    # Dangerous
+    x_pos = x_pos + self.X_CELL_SIZE
+    pos = (percent(x_pos), percent(y_pos))
+    self.add(self.rect(pos, size, fill=self.INTERACTION_COLOR_MAP[self.INTERACTION_DANGEROUS]))
+
+    text_x_pos = x_pos + self.X_CELL_SIZE / 2
+    text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
+    pos = (percent(text_x_pos), percent(text_y_pos))
+    self.add(self.text('Dangerous', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+
+    # Serotonin Syndrome
+    x_pos = x_pos + self.X_CELL_SIZE
+    pos = (percent(x_pos), percent(y_pos))
+    self.add(self.rect(pos, size, fill=self.INTERACTION_COLOR_MAP[self.INTERACTION_SEROTONIN_SYNDROME]))
+
+    text_x_pos = x_pos + self.X_CELL_SIZE / 2
+    text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
+    pos = (percent(text_x_pos), percent(text_y_pos))
+    self.add(self.text('Serotonin Syndrome', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
