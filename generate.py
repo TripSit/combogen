@@ -16,8 +16,8 @@ ORIGINAL = ('3800px', '1600px')
 
 chart = ComboChart(drug_db, size=DOUBLE_A4)
 background = chart.add(chart.rect((0, 0), ('100%', '100%'), fill='#000'))
-chart.add_style("@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed)")
-chart.add_style(".name{font-family:'Roboto Condensed';font-size:0.7em}")
+chart.add_style("@import url(https://fonts.googleapis.com/css?family=Oswald);")
+chart.add_style(".name{font-family:'Oswald';font-size:0.7em}")
 
 y_index = 0
 for group_a_id, group_a in enumerate(drug_db.config['tableOrder']):
