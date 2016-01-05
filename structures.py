@@ -2,7 +2,7 @@ import requests
 import svgwrite
 import json
 import base64
-from svgwrite import percent
+from svgwrite import percent, em
 from collections import OrderedDict
 
 class DrugDatabase(object):
@@ -84,6 +84,7 @@ class ComboChart(svgwrite.Drawing):
   X_TABLE_MARGIN = 2
   Y_TABLE_MARGIN = 10
   CELL_MARGIN = 0.03
+  LABEL_FONT_SIZE = 0.6
 
   def __init__(self, database, filename="drug-combinations.svg", size=('100%', '100%'), **extra):
     super(ComboChart, self).__init__(filename, size, **extra)
@@ -108,7 +109,7 @@ class ComboChart(svgwrite.Drawing):
       size = (percent(ComboChart.Y_TABLE_MARGIN), ) * 2
       self.add(self.image(dataURI, position, size))
 
-  def add_title(self, text="Guide to drug combinations", style="font-size:250%;fill:white"):
+  def add_title(self, text="Guide to drug combinations", style="font-size:2.5em;fill:white"):
     position = ('50%', percent(ComboChart.Y_TABLE_MARGIN * 0.75))
     self.add(self.text(text, position, text_anchor='middle', style=style))
 
@@ -120,12 +121,12 @@ class ComboChart(svgwrite.Drawing):
 
     self.add(self.rect(pos, size, fill=color))
 
-  def add_label(self, text, y_index, x_index, color='white', text_style='font-size:0.6rem'):
+  def add_label(self, text, y_index, x_index, color='white', className="name"):
     x_pos = ComboChart.X_TABLE_MARGIN + x_index * (self.X_CELL_SIZE + ComboChart.CELL_MARGIN) + self.X_CELL_SIZE / 2
     y_pos = ComboChart.Y_TABLE_MARGIN + y_index * (self.Y_CELL_SIZE + ComboChart.CELL_MARGIN) + self.Y_CELL_SIZE * 0.75
     pos = (percent(x_pos), percent(y_pos))
 
-    self.add(self.text(text, pos, text_anchor='middle', fill=color, style=text_style))
+    self.add(self.text(text, pos, text_anchor='middle', fill=color, class_=className))
 
   # TODO: there is a bit much code repetition here
   def add_legend(self):
@@ -201,3 +202,6 @@ class ComboChart(svgwrite.Drawing):
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
     self.add(self.text('Serotonin Syndrome', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+
+  def add_style(self, style):
+    self.add(self.style(style))
