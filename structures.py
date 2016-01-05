@@ -140,7 +140,7 @@ class ComboChart(svgwrite.Drawing):
     text_x_pos = x_pos + self.X_CELL_SIZE / 2
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
-    self.add(self.text('Low Risk & Synergy', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+    self.add(self.text('Low Risk & Synergy', pos, text_anchor='middle', color='white', style='font-size:0.6em'))
 
     # Low Risk & No Synergy
     x_pos = x_pos + self.X_CELL_SIZE
@@ -150,7 +150,7 @@ class ComboChart(svgwrite.Drawing):
     text_x_pos = x_pos + self.X_CELL_SIZE / 2
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
-    self.add(self.text('Low Risk & No Synergy', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+    self.add(self.text('Low Risk & No Synergy', pos, text_anchor='middle', color='white', style='font-size:0.6em'))
 
     # Low Risk & Decrease
     x_pos = x_pos + self.X_CELL_SIZE
@@ -160,7 +160,7 @@ class ComboChart(svgwrite.Drawing):
     text_x_pos = x_pos + self.X_CELL_SIZE / 2
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
-    self.add(self.text('Low Risk & Decrease', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+    self.add(self.text('Low Risk & Decrease', pos, text_anchor='middle', color='white', style='font-size:0.6em'))
 
     # Caution
     x_pos = x_pos + self.X_CELL_SIZE
@@ -170,7 +170,7 @@ class ComboChart(svgwrite.Drawing):
     text_x_pos = x_pos + self.X_CELL_SIZE / 2
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
-    self.add(self.text('Caution', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+    self.add(self.text('Caution', pos, text_anchor='middle', color='white', style='font-size:0.6em'))
 
     # Unsafe
     x_pos = x_pos + self.X_CELL_SIZE
@@ -180,7 +180,7 @@ class ComboChart(svgwrite.Drawing):
     text_x_pos = x_pos + self.X_CELL_SIZE / 2
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
-    self.add(self.text('Unsafe', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+    self.add(self.text('Unsafe', pos, text_anchor='middle', color='white', style='font-size:0.6em'))
 
     # Dangerous
     x_pos = x_pos + self.X_CELL_SIZE
@@ -190,7 +190,7 @@ class ComboChart(svgwrite.Drawing):
     text_x_pos = x_pos + self.X_CELL_SIZE / 2
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
-    self.add(self.text('Dangerous', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+    self.add(self.text('Dangerous', pos, text_anchor='middle', color='white', style='font-size:0.6em'))
 
     # Serotonin Syndrome
     x_pos = x_pos + self.X_CELL_SIZE
@@ -200,7 +200,7 @@ class ComboChart(svgwrite.Drawing):
     text_x_pos = x_pos + self.X_CELL_SIZE / 2
     text_y_pos = y_pos + self.Y_CELL_SIZE * 0.75
     pos = (percent(text_x_pos), percent(text_y_pos))
-    self.add(self.text('Serotonin Syndrome', pos, text_anchor='middle', color='white', style='font-size:0.6rem'))
+    self.add(self.text('Serotonin Syndrome', pos, text_anchor='middle', color='white', style='font-size:0.6em'))
 
   def add_style(self, style):
     self.add(self.style(style))
