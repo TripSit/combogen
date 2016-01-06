@@ -1,6 +1,6 @@
+from combogen.DrugDatabase import DrugDatabase
+from combogen.Config import Config
 from jinja2 import Template
-from DrugDatabase import DrugDatabase
-from Config import Config
 
 class ChartGenerator(object):
   
