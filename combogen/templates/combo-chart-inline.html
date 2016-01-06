@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <style>{{ style }}</style>
+
+  <div id="header">
+    <img src="{{ logo_url }}" alt="logo" id="logo">
+    <h1 id="title">{{ title }}</h1>
+    <div id="legend">
+      {% include "legend.html" %}
+    </div>
+  </div>
+	{% include "combo-table.html" %}
+</body>
+</html>
