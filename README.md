@@ -1,1 +1,1 @@
-pip install requests svgwrite
+pip install requests svgwrite jinja2
