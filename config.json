@@ -43,5 +43,14 @@
     "#660000",
     "#073763",
     "#783f04"
-  ]
+  ],
+  "interactionColours": {
+    "safe_no_synergy": "",
+    "safe_synergy": "",
+    "safe_decrease": "",
+    "caution": "",
+    "dangerous": "",
+    "deadly": "",
+    "unknown": ""
+  }
 }
