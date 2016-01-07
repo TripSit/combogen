@@ -1,5 +1,6 @@
 from combogen.DrugDatabase import DrugDatabase
 from combogen.Config import Config
+from combogen.Utils import file_to_dataURI
 from jinja2 import Environment, PackageLoader
 import os
 
