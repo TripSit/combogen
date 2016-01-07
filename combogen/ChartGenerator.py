@@ -16,7 +16,8 @@ class ChartGenerator(object):
 
   def generate(self):
     template = self._env.get_template('combo-chart-inline.html')
-    return template.render(title="Test", style=None, logo_url=None)
+    logo_data_URI = file_to_dataURI(os.path.join(PROJECT_ROOT, 'logo.svg'))
+    return template.render(title="Drug Combinations", logo_url=logo_data_URI, db=self._drug_database, cfg=self._config)
 
   def debug(self):
     for group in self._drug_database.drug_groups:
