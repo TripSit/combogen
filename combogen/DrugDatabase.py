@@ -26,8 +26,8 @@ class DrugDatabase(object):
     self._drug_groups.append(group)
 
   def load_groups(self):
-    for config_group, colour in self._config.table_order_with_colours:
-      drug_group = DrugGroup(colour)
+    for group_name, config_group in self._config.grouped_table_order:
+      drug_group = DrugGroup(group_name)
 
       for drug_name in config_group:
         drug = Drug(drug_name, drug_group, self)
@@ -46,13 +46,13 @@ class DrugDatabase(object):
 
 
 class DrugGroup(object):
-  def __init__(self, colour: str):
-    self._colour = colour
+  def __init__(self, name: str):
+    self._name = name
     self._drugs = list()
 
   @property
-  def colour(self):
-    return self._colour
+  def name(self):
+    return self._name
 
   @property
   def drugs(self):

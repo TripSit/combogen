@@ -11,15 +11,17 @@ class Config(object):
     return self._config
 
   @property
-  def table_order_with_colours(self):
-    order_with_colours = list()
+  def grouped_table_order(self):
+    groups_with_names = list()
 
     for index, group in enumerate(self._config['tableOrder']):
-      group_colour = self._config['groupHeadingColours'][index]
-      order_with_colours.append((group, group_colour))
+      group_name = self._config['groupNames'][index]
+      groups_with_names.append((group_name, group))
 
-    return order_with_colours
+    return groups_with_names
 
-  @property
-  def interaction_colour(self, interaction):
-    pass
+  def interaction_to_class(self, interaction):
+    try:
+      return self._config['interactionClass'][interaction]
+    except KeyError:
+      return self._config['interactionClass']['fallback']

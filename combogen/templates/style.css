@@ -1,0 +1,83 @@
+.psychedelic {
+  background-color: #274e13;
+}
+.dissociative {
+  background-color: #20124d;
+}
+.stimulant {
+  background-color: #660000;
+}
+.depressant {
+  background-color: #073763;
+}
+.antidepressant {
+  background-color: #783f04;
+}
+
+.safe {
+  background-color: #84cf92;
+}
+.synergy {
+  background-color: #31b149;
+}
+.decrease {
+  background-color: #006cb3;
+}
+.caution {
+  background-color: #d5c625;
+}
+.unsafe {
+  background-color: #d98427;
+}
+.dangerous {
+  background-color: #d12128;
+}
+.serotoninsyndrome {
+  background-color: #684099;
+}
+.unknown {
+  background-color: #6f6f6f;
+}
+
+body {
+  background-color: #000000;
+  width: 3000px;
+}
+.clear {
+  clear: both;
+}
+
+#header {
+  display: table;
+  width: 100%;
+}
+#logo {
+  display: table-cell;
+  min-width: 30%;
+  width: 30%;
+}
+#logo img{
+  width: 300px;
+}
+#title {
+  color: #FFFFFF;
+  display: table-cell;
+  text-align: center;
+  width: 100%;
+}
+#legend {
+  width: 30%;
+  min-width: 30%;
+  display: table-cell;
+}
+
+#chart {
+  margin: 0 auto;
+}
+td {
+  color: #FFFFFF;
+  width: 100px;
+  max-width: 100px;
+  overflow: hidden;
+  text-align: center;
+}

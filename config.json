@@ -37,20 +37,21 @@
       "SSRIs"
     ]
   ],
-  "groupHeadingColours": [
-    "#274e13",
-    "#20124d",
-    "#660000",
-    "#073763",
-    "#783f04"
+  "groupNames": [
+    "psychedelic",
+    "dissociative",
+    "stimulant",
+    "depressant",
+    "antidepressant"
   ],
-  "interactionColours": {
-    "safe_no_synergy": "",
-    "safe_synergy": "",
-    "safe_decrease": "",
-    "caution": "",
-    "dangerous": "",
-    "deadly": "",
-    "unknown": ""
+  "interactionClass": {
+    "Low Risk & No Synergy": "safe",
+    "Low Risk & Synergy": "synergy",
+    "Low Risk & Decrease": "decrease",
+    "Caution": "caution",
+    "Unsafe": "unsafe",
+    "Dangerous": "dangerous",
+    "Serotonin Syndrome": "serotoninsyndrome",
+    "fallback": "unknown"
   }
 }
