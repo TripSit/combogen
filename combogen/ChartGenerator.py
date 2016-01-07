@@ -28,5 +28,7 @@ class ChartGenerator(object):
 
 if __name__ == "__main__":
   chart_generator = ChartGenerator()
-  print(chart_generator.generate())
-  #chart_generator.debug()
+  chart = chart_generator.generate()
+  print(chart)
+  with open(os.path.join(PROJECT_ROOT, 'drug-combinations.html'), 'w+') as f:
+    f.write(chart)
