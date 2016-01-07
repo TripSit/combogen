@@ -41,6 +41,9 @@ class DrugDatabase(object):
     except KeyError:
       return "unknown"
 
+  def __iter__(self):
+    return iter(self.drugs)
+
 
 class DrugGroup(object):
   def __init__(self, colour: str):
