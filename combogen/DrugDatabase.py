@@ -13,7 +13,7 @@ class DrugDatabase(object):
 
   @property
   def drug_groups(self):
-    return self._drug_groups #type: [DrugGroup]
+    return self._drug_groups
 
   @property
   def drugs(self):
