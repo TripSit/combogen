@@ -7,6 +7,7 @@ def file_to_dataURI(path):
       raise FileNotFoundError
 
   mime, _ = mimetypes.guess_type(path)
+
   with open(path, 'rb') as f:
       data = f.read()
       data64 = base64.b64encode(data)
