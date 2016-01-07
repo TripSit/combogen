@@ -28,5 +28,5 @@ class ChartGenerator(object):
 
 if __name__ == "__main__":
   chart_generator = ChartGenerator()
-  #print(chart_generator.generate())
+  print(chart_generator.generate())
   #chart_generator.debug()
