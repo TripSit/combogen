@@ -94,8 +94,7 @@ class Drug(object):
     return self._db.interaction(self, other)
 
   def __eq__(self, other):
-    if isinstance(other, Drug) and self.id == other.id:
-      return True
+    return isinstance(other, Drug) and self.id == other.id
 
   def __str__(self):
     return self._name
