@@ -15,7 +15,7 @@
 }
 
 .safe {
-  background-color: #84cf92;
+  background-color: #296935;
 }
 .synergy {
   background-color: #31b149;
@@ -24,7 +24,7 @@
   background-color: #006cb3;
 }
 .caution {
-  background-color: #d5c625;
+  background-color: #E3D000;
 }
 .unsafe {
   background-color: #d98427;
@@ -39,45 +39,99 @@
   background-color: #6f6f6f;
 }
 
-body {
+#container {
   background-color: #000000;
-  width: 3000px;
+  width: 3800px;
+  height: 1600px;
 }
 .clear {
   clear: both;
 }
 
-#header {
+header {
   display: table;
-  width: 100%;
-}
-#logo {
-  display: table-cell;
-  min-width: 30%;
-  width: 30%;
-}
-#logo img{
-  width: 300px;
-}
-#title {
-  color: #FFFFFF;
-  display: table-cell;
-  text-align: center;
-  width: 100%;
-}
-#legend {
-  width: 30%;
-  min-width: 30%;
-  display: table-cell;
-}
-
-#chart {
+  padding-top: 1%;
+  width: 98%;
+  height: 15%;
+  max-height: 15%;
   margin: 0 auto;
 }
-td {
+#logo, #legend {
+  display: table-cell;
+  min-width: 30%;
+  width: 30%;
+}
+#logo img {
+  max-height: 40%;
+}
+#title {
+  display: table-cell;
+  width: 40%;
   color: #FFFFFF;
-  width: 100px;
-  max-width: 100px;
+  font-family: 'Kadwa';
+  font-size: 6rem;
+  text-align: center;
+  vertical-align: middle;
+}
+#legend {
+  vertical-align: middle;
+}
+#legend table {
+  width: 80%;
+  color: black;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  margin-left: auto;
+  text-align: center;
+  table-layout: fixed;
+}
+#legend i {
+  color: white;
+}
+
+
+#chart {
+  height: 65%;
+  width: 98%;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+#chart td {
+  color: #FFFFFF;
   overflow: hidden;
   text-align: center;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+}
+
+
+footer {
+  margin-top: 1%;
+  display: table;
+  width: 100%;
+  max-height: 10%;
+  height: 10%;
+  color: #757575;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+}
+footer aside {
+  display: table-cell;
+  width: 10%;
+  text-align: center;
+}
+footer aside img {
+  display: inline-block;
+  margin: 0 auto;
+  width: 50%;
+}
+footer aside h3 {
+  margin: 0;
+}
+#disclaimer {
+  display: table-cell;
+  vertical-align: top;
+  width: 80%;
 }

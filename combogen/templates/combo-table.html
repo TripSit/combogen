@@ -14,22 +14,21 @@
 {% for drugA in db.drugs %}
 {% set outer = loop %}
   <tr>
-  <td class="{{ drugA.group.name }}">{{ drugA.name }}</td>
-
+    <td class="{{ drugA.group.name }}">{{ drugA.name }}</td>
   {% for drugB in db.drugs %}
-  {% set inner = loop %}
+    {% set inner = loop %}
     {% if drugA == drugB %}
       {% set class = drugA.group.name %}
       {% set content = drugA.name %}
     {% else %}
       {% set interaction = db.interaction(drugA, drugB) %}
       {% set class = cfg.interaction_to_class(interaction) %}
-      {% set content = "" %}
+      {% set fa_icon = cfg.interaction_fa(interaction) %}
+      {% set content = '<i class="fa ' + fa_icon + '"></i>' %}
     {% endif %}
     <td class="{{ class }}">{{ content }}</td>
   {% endfor %}
-
-  <td class="{{ drugA.group.name }}">{{ drugA.name }}</td>
+    <td class="{{ drugA.group.name }}">{{ drugA.name }}</td>
   </tr>
 {% endfor %}
 

@@ -1,0 +1,14 @@
+{% macro fa_label(interaction) %}
+  <i class="fa {{ cfg.interaction_fa(interaction) }}"></i><br>{{ interaction }}
+{% endmacro %}
+<table>
+  <tr>
+    <td class="safe">{{ fa_label("Low Risk & No Synergy") }}</td>
+    <td class="synergy">{{ fa_label("Low Risk & Synergy") }}</td>
+    <td class="decrease">{{ fa_label("Low Risk & Decrease") }}</td>
+    <td class="caution">{{ fa_label("Caution") }}</td>
+    <td class="unsafe">{{ fa_label("Unsafe") }}</td>
+    <td class="dangerous">{{ fa_label("Dangerous") }}</td>
+    <td class="serotoninsyndrome">{{ fa_label("Serotonin Syndrome") }}</td>
+  </tr>
+</table>

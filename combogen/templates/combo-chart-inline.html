@@ -3,19 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ title }}</title>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Kadwa:700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
   <style>
     {% include "style.css" %}
   </style>
-  <div id="header">
-    <div id="logo"><img src="{{ logo_url }}" alt="logo"></div>
-    <h1 id="title">{{ title }}</h1>
-    <div id="legend">
-      {% include "legend.html" %}
+  <div id="container">
+    <header>
+      <div id="logo"><img src="{{ image_urls.logo }}" alt="logo"></div>
+      <h1 id="title">{{ title }}</h1>
+      <div id="legend">
+        {% include "legend.html" %}
+      </div>
+    </header>
+    {% include "combo-table.html" %}
+    <footer>
+      <aside>
+        <img src="{{ image_urls.app }}" alt="app">
+        <h3>Mobile App</h3>
+      </aside>
+      <article id="disclaimer">{% include "disclaimer.html" %}</article>
+      <aside>
+        <img src="{{ image_urls.support }}" alt="support">
+        <h3>Support Us</h3>
+      </aside>
+    </footer>
     </div>
-  </div>
-  <div class="clear"></div>
-	{% include "combo-table.html" %}
 </body>
 </html>
