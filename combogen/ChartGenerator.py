@@ -12,7 +12,7 @@ class ChartGenerator(object):
   def __init__(self):
     self._config = Config(os.path.join(PROJECT_ROOT, 'config.json'))
     self._drug_database = DrugDatabase(self._config)
-    self._env = Environment(loader=PackageLoader('combogen', 'templates'), lstrip_blocks=True)
+    self._env = Environment(loader=PackageLoader('combogen', 'templates'), lstrip_blocks=True, trim_blocks=True)
 
   def generate(self):
     template = self._env.get_template('combo-chart-inline.html')
