@@ -1,3 +1,37 @@
-<table id="chart">
+{% macro table_header() %}
+  <tr>
+    <td></td>
+    {% for drug in db.drugs %}
+    <td class="{{ drug.group.name }}">{{ drug.name }}</td>
+    {% endfor %}
+    <td></td>
+  </tr>
+{% endmacro %}
 
+<table id="chart">
+{{ table_header() }}
+
+{% for drugA in db.drugs %}
+{% set outer = loop %}
+  <tr>
+  <td class="{{ drugA.group.name }}">{{ drugA.name }}</td>
+
+  {% for drugB in db.drugs %}
+  {% set inner = loop %}
+    {% if drugA == drugB %}
+      {% set class = drugA.group.name %}
+      {% set content = drugA.name %}
+    {% else %}
+      {% set interaction = db.interaction(drugA, drugB) %}
+      {% set class = cfg.interaction_to_class(interaction) %}
+      {% set content = "" %}
+    {% endif %}
+    <td class="{{ class }}">{{ content }}</td>
+  {% endfor %}
+
+  <td class="{{ drugA.group.name }}">{{ drugA.name }}</td>
+  </tr>
+{% endfor %}
+
+{{ table_header() }}
 </table>

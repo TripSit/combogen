@@ -5,15 +5,17 @@
   <title>{{ title }}</title>
 </head>
 <body>
-  <style>{{ style }}</style>
-
+  <style>
+    {% include "style.css" %}
+  </style>
   <div id="header">
-    <img src="{{ logo_url }}" alt="logo" id="logo">
+    <div id="logo"><img src="{{ logo_url }}" alt="logo"></div>
     <h1 id="title">{{ title }}</h1>
     <div id="legend">
       {% include "legend.html" %}
     </div>
   </div>
+  <div class="clear"></div>
 	{% include "combo-table.html" %}
 </body>
 </html>
