@@ -39,7 +39,7 @@ class DrugDatabase(object):
     try:
       return self._combos[drug_a.name.lower()][drug_b.name.lower()]['status']
     except KeyError:
-      return "unknown"
+      return None
 
   def __iter__(self):
     return iter(self.drugs)
