@@ -25,6 +25,9 @@
       {% set class = cfg.interaction_to_class(interaction) %}
       {% set fa_icon = cfg.interaction_fa(interaction) %}
       {% set content = '<i class="fa ' + fa_icon + '"></i>' %}
+      {% if class == "unknown" %}
+        {% set content = "{} + {} ({})".format(drugA.name, drugB.name, interaction) %}
+      {% endif %}
     {% endif %}
     <td class="{{ class }}">{{ content }}</td>
   {% endfor %}
