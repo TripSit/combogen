@@ -15,7 +15,7 @@ class ChartGenerator(object):
     self._db = DrugDatabase(self._config)
     self._env = Environment(loader=PackageLoader('combogen', 'templates'), lstrip_blocks=True, trim_blocks=True)
 
-  def generate(self):
+  def generate(self, version):
     template = self._env.get_template('combo-chart-inline.html')
     logo_data_uri = file_to_dataURI(os.path.join(PROJECT_ROOT, 'logo.svg'))
     app_data_uri = file_to_dataURI(os.path.join(PROJECT_ROOT, 'app_qr.svg'))
@@ -26,7 +26,8 @@ class ChartGenerator(object):
       'support': support_data_uri
     }
     generated = datetime.now(timezone.utc)
-    status_msg = "Generated on {} at {} UTC".format(generated.strftime("%d %b %Y"), generated.strftime("%H:%M"))
+    status_msg = "Version {}<br>".format(version)
+    status_msg += "Generated on {} at {} UTC".format(generated.strftime("%d %b %Y"), generated.strftime("%H:%M"))
     return template.render(title="Guide to Drug Combinations", status=status_msg, image_urls=image_urls, db=self._db, cfg=self._config)
 
   def find_missing_drugs(self):
@@ -94,6 +95,6 @@ class ChartGenerator(object):
 if __name__ == "__main__":
   chart_generator = ChartGenerator()
   chart_generator.debug()
-  chart = chart_generator.generate()
+  chart = chart_generator.generate("3.0 [PRE-RELEASE - SOME DATA MAY BE INACCURATE]")
   with open(os.path.join(PROJECT_ROOT, 'drug-combinations.html'), 'w+') as f:
     f.write(chart)
