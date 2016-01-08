@@ -45,13 +45,13 @@
     "antidepressant"
   ],
   "interactionClass": {
-    "Low Risk & No Synergy": ["safe", "fa-thumbs-o-up"],
-    "Low Risk & Synergy": ["synergy", "fa-thumbs-up"],
-    "Low Risk & Decrease": ["decrease", "fa-angle-double-down"],
-    "Caution": ["caution", "fa-warning"],
-    "Unsafe": ["unsafe", "fa-frown-o"],
-    "Dangerous": ["dangerous", "fa-flash"],
-    "Serotonin Syndrome": ["serotoninsyndrome", "fa-ban"],
-    "fallback": ["unknown", ""]
+    "low risk & synergy": ["synergy", "fa-arrow-up"],
+    "low risk & no synergy": ["safe", "fa-thumbs-up"],
+    "low risk & decrease": ["decrease", "fa-arrow-down"],
+    "caution": ["caution", "fa-warning"],
+    "unsafe": ["unsafe", "fa-thumbs-down"],
+    "dangerous": ["dangerous", "fa-times"],
+    "serotonin syndrome": ["serotoninsyndrome", "fa-flash"],
+    "fallback": ["unknown", "fa-question"]
   }
 }

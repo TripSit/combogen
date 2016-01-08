@@ -22,12 +22,12 @@ class Config(object):
 
   def interaction_to_class(self, interaction):
     try:
-      return self._config['interactionClass'][interaction][0]
+      return self._config['interactionClass'][interaction.lower()][0]
     except KeyError:
       return self._config['interactionClass']['fallback'][0]
 
   def interaction_fa(self, interaction):
     try:
-      return self._config['interactionClass'][interaction][1]
+      return self._config['interactionClass'][interaction.lower()][1]
     except KeyError:
       return self._config['interactionClass']['fallback'][1]
