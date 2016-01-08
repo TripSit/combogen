@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 .psychedelic {
   background-color: #274e13;
 }
@@ -14,23 +18,23 @@
   background-color: #783f04;
 }
 
-.safe {
-  background-color: #296935;
-}
 .synergy {
-  background-color: #31b149;
+  background-color: #168608;
+}
+.safe {
+  background-color: #09631A;
 }
 .decrease {
   background-color: #006cb3;
 }
 .caution {
-  background-color: #E3D000;
+  background-color: #D6C500;
 }
 .unsafe {
-  background-color: #d98427;
+  background-color: #E6671C;
 }
 .dangerous {
-  background-color: #d12128;
+  background-color: #CC0B0B;
 }
 .serotoninsyndrome {
   background-color: #684099;
@@ -61,7 +65,7 @@
 header {
   display: table;
   padding-top: 1%;
-  width: 98%;
+  width: 95%;
   height: 15%;
   max-height: 15%;
   margin: 0 auto;
@@ -78,8 +82,9 @@ header {
   display: table-cell;
   width: 40%;
   color: #FFFFFF;
-  font-family: 'Kadwa';
-  font-size: 6rem;
+  font-family: 'Teko', sans-serif;
+  font-weight: 300;
+  font-size: 9rem;
   text-align: center;
   vertical-align: middle;
 }
@@ -89,7 +94,6 @@ header {
 #legend table {
   width: 80%;
   color: black;
-  font-family: 'Ubuntu';
   font-weight: 500;
   margin-left: auto;
   text-align: center;
@@ -102,7 +106,7 @@ header {
 
 #chart {
   height: 65%;
-  width: 98%;
+  width: 95%;
   margin: 0 auto;
   table-layout: fixed;
 }
@@ -110,32 +114,29 @@ header {
   color: #FFFFFF;
   overflow: hidden;
   text-align: center;
-  font-family: 'Ubuntu';
   font-weight: 500;
 }
 
 
 footer {
-  margin-top: 1%;
+  margin: 0.5% auto 0;
   display: table;
-  width: 100%;
+  width: 95%;
   max-height: 10%;
   height: 10%;
   color: #757575;
   text-align: center;
   font-size: 1.6rem;
-  font-family: 'Ubuntu';
   font-weight: 500;
 }
 footer aside {
   display: table-cell;
-  width: 10%;
+  width: 8%;
   text-align: center;
 }
 footer aside img {
   display: inline-block;
-  margin: 0 auto;
-  width: 50%;
+  width: 70%;
 }
 footer aside h3 {
   margin: 0;
@@ -143,5 +144,5 @@ footer aside h3 {
 #disclaimer {
   display: table-cell;
   vertical-align: top;
-  width: 80%;
+  font-weight: 600;
 }
