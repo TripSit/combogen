@@ -37,7 +37,7 @@ class ChartGenerator(object):
   def find_missing_combos(self):
     """
     This function allows you to find missing drug combos or asymmetric dug combos
-    (If LSD->MDMA combo is defined, but MDMA->LSD isn't - This will be improved soon).
+    (If LSD->MDMA combo is defined, but MDMA->LSD isn't).
 
     It will also return interactions which don't have CSS class defined in config.json
     (In "interactionClass" section)

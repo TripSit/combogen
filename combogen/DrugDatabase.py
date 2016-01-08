@@ -22,8 +22,9 @@ class DrugDatabase(object):
                  for drug in group]
     return drug_list
 
-  def add_group(self, group):
-    self._drug_groups.append(group)
+  @property
+  def combos(self) -> dict:
+    return self._combos
 
   def load_groups(self):
     for group_name, config_group in self._config.grouped_table_order:
@@ -35,11 +36,20 @@ class DrugDatabase(object):
 
       self.add_group(drug_group)
 
-  def interaction(self, drug_a, drug_b):
+  def add_group(self, group):
+    self._drug_groups.append(group)
+
+  def interaction(self, drug_a, drug_b, strict=False):
+    drug_a_name = drug_a.lower() if isinstance(drug_a, str) else drug_a.name.lower()
+    drug_b_name = drug_b.lower() if isinstance(drug_b, str) else drug_b.name.lower()
     try:
-      return self._combos[drug_a.name.lower()][drug_b.name.lower()]['status']
+      return self._combos[drug_a_name][drug_b_name]['status']
     except KeyError:
-      return None
+      if not strict:
+        try:
+          return self._combos[drug_b_name][drug_a_name]['status']
+        except KeyError:
+          return None
 
   def is_drug_in_combos(self, drug):
     all_drugs = list(map(str.lower, self._combos.keys()))
@@ -47,6 +57,9 @@ class DrugDatabase(object):
 
   def __iter__(self):
     return iter(self.drugs)
+
+  def __len__(self):
+    return sum([len(group) for group in self.drug_groups])
 
 
 class DrugGroup(object):
