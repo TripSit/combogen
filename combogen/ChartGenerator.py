@@ -2,6 +2,7 @@ from combogen.DrugDatabase import DrugDatabase
 from combogen.Config import Config
 from combogen.Utils import file_to_dataURI
 from jinja2 import Environment, PackageLoader
+from datetime import datetime, timezone
 import os
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -24,7 +25,9 @@ class ChartGenerator(object):
       'app': app_data_uri,
       'support': support_data_uri
     }
-    return template.render(title="Guide to drug combinations", image_urls=image_urls, db=self._db, cfg=self._config)
+    generated = datetime.now(timezone.utc)
+    status_msg = "Generated on {} at {} UTC".format(generated.strftime("%d %b %Y"), generated.strftime("%H:%M"))
+    return template.render(title="Guide to Drug Combinations", status=status_msg, image_urls=image_urls, db=self._db, cfg=self._config)
 
   def find_missing_drugs(self):
     config_drugs = self._config.all_drugs_in_order

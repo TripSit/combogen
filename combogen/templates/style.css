@@ -40,12 +40,22 @@
 }
 
 #container {
+  position:  relative;
   background-color: #000000;
   width: 3800px;
   height: 1600px;
 }
-.clear {
-  clear: both;
+#status {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  color: #757575;
+  font-size: 1.4rem;
+  text-align: right;
+  font-weight: 700;
+}
+#legend, #status, #chart, footer {
+  font-family: 'Open Sans', sans-serif;
 }
 
 header {
