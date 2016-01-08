@@ -37,3 +37,7 @@ class Config(object):
       return self._config['interactionClass'][interaction.lower()][1]
     except KeyError:
       return self._config['interactionClass']['fallback'][1]
+
+  def is_drug_in_config(self, drug):
+    all_drugs = list(map(str.lower, self.all_drugs_in_order))
+    return drug.lower() in all_drugs
