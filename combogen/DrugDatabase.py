@@ -41,6 +41,10 @@ class DrugDatabase(object):
     except KeyError:
       return None
 
+  def is_drug_in_combos(self, drug):
+    all_drugs = list(map(str.lower, self._combos.keys()))
+    return drug.lower() in all_drugs
+
   def __iter__(self):
     return iter(self.drugs)
 
