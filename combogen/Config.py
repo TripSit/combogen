@@ -20,6 +20,12 @@ class Config(object):
 
     return groups_with_names
 
+  @property
+  def all_drugs_in_order(self):
+    return [drug
+            for group in self._config['tableOrder']
+            for drug in group]
+
   def interaction_to_class(self, interaction):
     try:
       return self._config['interactionClass'][interaction.lower()][0]
