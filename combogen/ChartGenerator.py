@@ -54,8 +54,8 @@ class ChartGenerator(object):
         if drug_in_config == drug_in_json:
           continue
 
-        cfg_json_interaction = self._db.interaction(drug_in_config, drug_in_json)
-        json_cfg_interaction = self._db.interaction(drug_in_json, drug_in_config)
+        cfg_json_interaction = self._db.interaction(drug_in_config, drug_in_json, strict=True)
+        json_cfg_interaction = self._db.interaction(drug_in_json, drug_in_config, strict=True)
 
         if cfg_json_interaction is None:
           missing.append((drug_in_config, drug_in_json))
