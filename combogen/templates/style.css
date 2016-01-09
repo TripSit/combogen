@@ -105,7 +105,7 @@ header {
 
 
 #chart {
-  height: 60%;
+  height: 65%;
   width: 95%;
   margin: 0 auto;
   table-layout: fixed;
@@ -114,13 +114,12 @@ header {
   color: #FFFFFF;
   overflow: hidden;
   text-align: center;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 
 footer {
-  margin: 2% auto 0;
+  margin: 0.5% auto 0;
   display: table;
   width: 95%;
   max-height: 10%;
