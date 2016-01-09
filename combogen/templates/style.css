@@ -121,18 +121,16 @@ header {
 
 
 #chart {
-  font-family: 'UniversCondensedLight', 'Open Sans', sans-serif;
+  font-family: 'Univers', 'Open Sans', sans-serif;
   height: 65%;
   width: 95%;
   margin: 0 auto;
   table-layout: fixed;
 }
 #chart td {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 0.98rem;
   color: #FFFFFF;
   text-align: center;
-  vertical-align: center;
   overflow: hidden;
 }
 
@@ -165,5 +163,4 @@ footer aside h3 {
   font-family: 'UniversLight', 'Open Sans', sans-serif;
   display: table-cell;
   vertical-align: top;
-  font-weight: 600;
 }
