@@ -1,7 +1,24 @@
+@font-face {
+  font-family: "AgencyFBCondensed";
+  src: url("resources/AgencyFBBoldCondensed.ttf");
+}
+@font-face {
+  font-family: "UniversCondensedLight";
+  src: url("resources/Univers-CondensedLight.otf");
+}
+@font-face {
+  font-family: "UniversLight";
+  src: url("resources/Univers-Light.otf");
+}
+@font-face {
+  font-family: "Univers";
+  src: url("resources/Univers.otf");
+}
 body {
   margin: 0;
   padding: 0;
 }
+
 .psychedelic {
   background-color: #274e13;
 }
@@ -22,7 +39,7 @@ body {
   background-color: #31b149;
 }
 .safe {
-  background-color: #278d3a;
+  background-color: #1d6a2b;
 }
 .decrease {
   background-color: #006cb3;
@@ -50,6 +67,7 @@ body {
   height: 1600px;
 }
 #status {
+  font-family: 'Open Sans', sans-serif;
   position: absolute;
   top: 2%;
   right: 3%;
@@ -57,9 +75,6 @@ body {
   font-size: 1.4rem;
   text-align: right;
   font-weight: 700;
-}
-#legend, #status, #chart, footer {
-  font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -79,16 +94,17 @@ header {
   max-height: 40%;
 }
 #title {
-  display: table-cell;
-  width: 40%;
+  font-family: 'AgencyFBCondensed', 'Open Sans', sans-serif;
   color: #FFFFFF;
-  font-family: 'Teko', sans-serif;
   font-weight: 300;
   font-size: 9rem;
   text-align: center;
+  display: table-cell;
+  width: 40%;
   vertical-align: middle;
 }
 #legend {
+  font-family: 'Open Sans', sans-serif;
   vertical-align: middle;
 }
 #legend table {
@@ -105,16 +121,19 @@ header {
 
 
 #chart {
+  font-family: 'UniversCondensedLight', 'Open Sans', sans-serif;
   height: 65%;
   width: 95%;
   margin: 0 auto;
   table-layout: fixed;
 }
 #chart td {
-  color: #FFFFFF;
-  overflow: hidden;
-  text-align: center;
+  font-size: 1.2rem;
   font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  vertical-align: center;
+  overflow: hidden;
 }
 
 
@@ -130,9 +149,10 @@ footer {
   font-weight: 500;
 }
 footer aside {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
   display: table-cell;
   width: 8%;
-  text-align: center;
 }
 footer aside img {
   display: inline-block;
@@ -142,6 +162,7 @@ footer aside h3 {
   margin: 0;
 }
 #disclaimer {
+  font-family: 'UniversLight', 'Open Sans', sans-serif;
   display: table-cell;
   vertical-align: top;
   font-weight: 600;
