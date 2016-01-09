@@ -30,7 +30,7 @@ class ChartGenerator(object):
     status_msg += "Generated on {} at {} UTC".format(generated.strftime("%d %b %Y"), generated.strftime("%H:%M"))
     return template.render(title="Guide to Drug Combinations", status=status_msg, image_urls=image_urls, db=self._db, cfg=self._config)
 
-  def find_missing_drugs(self):
+  def _find_missing_drugs(self):
     config_drugs = self._config.all_drugs_in_order
     json_drugs = self._db.combos.keys()
 
@@ -38,37 +38,44 @@ class ChartGenerator(object):
     missing_from_json = [drug for drug in config_drugs if not self._db.is_drug_in_combos(drug)]
     return (missing_from_json, missing_from_config)
 
-  def find_missing_combos(self):
+  def _find_missing_combos(self):
     """
-    This function allows you to find missing drug combos or asymmetric dug combos
-    (If LSD->MDMA combo is defined, but MDMA->LSD isn't).
+    Find missing or asymmetric drug combos
+    (If DrugA->DrugB combo is defined, but DrugB->DrugA isn't).
 
     It will also return interactions which don't have CSS class defined in config.json
     (In "interactionClass" section)
+
+    Only checks combos for drugs defined in config
     """
-    missing = []
+    all_drugs = self._config.all_drugs_in_order
+
+    missing = set()
     missing_classes = set()
-    for drug_in_config in self._config.all_drugs_in_order:
-      for drug_in_json in self._db.combos.keys():
-        drug_in_config = drug_in_config.lower()
-        drug_in_json = drug_in_json.lower()
-        if drug_in_config == drug_in_json:
+    asymmetric_combos = dict()
+    for drug_a in all_drugs:
+      for drug_b in all_drugs:
+        if drug_a == drug_b:
           continue
 
-        cfg_json_interaction = self._db.interaction(drug_in_config, drug_in_json, strict=True)
-        json_cfg_interaction = self._db.interaction(drug_in_json, drug_in_config, strict=True)
+        a_to_b = self._db.interaction(drug_a, drug_b, strict=True)
+        b_to_a = self._db.interaction(drug_b, drug_a, strict=True)
 
-        if cfg_json_interaction is None:
-          missing.append((drug_in_config, drug_in_json))
-        elif self._config.interaction_to_class(cfg_json_interaction) == "unknown":
-          missing_classes.add(repr(cfg_json_interaction.lower()))
+        if a_to_b is None:
+          missing.add((drug_a, drug_b))
+        elif self._config.interaction_to_class(a_to_b) == "unknown":
+          missing_classes.add(repr(a_to_b))
 
-        if json_cfg_interaction is None:
-          missing.append((drug_in_json, drug_in_config))
-        elif self._config.interaction_to_class(json_cfg_interaction) == "unknown":
-          missing_classes.add(repr(json_cfg_interaction.lower()))
+        if b_to_a is None:
+          missing.add((drug_b, drug_a))
+        elif self._config.interaction_to_class(b_to_a) == "unknown":
+          missing_classes.add(repr(b_to_a))
 
-    return (missing, missing_classes)
+        if (a_to_b is not None and b_to_a is not None) and a_to_b != b_to_a:
+          if "{}+{}".format(drug_b, drug_a) not in asymmetric_combos.keys():
+            asymmetric_combos["{}+{}".format(drug_a, drug_b)] = "'{}', '{}'".format(a_to_b, b_to_a)
+
+    return (missing, missing_classes, asymmetric_combos)
 
   def debug(self):
     print("== DRUG GROUPS IN DATABASE (FROM CONFIG) ==\r\n")
@@ -78,20 +85,20 @@ class ChartGenerator(object):
       message = "{} ({}): {}".format(group.name, len(group), drugs_with_commas)
       print(message)
 
-    #print("\r\n== DRUG COMBOS (RAW JSON) ==")
-    #pp.pprint(self._drug_database._combos)
-
     print("\r\n== MISSING DRUGS (ASYMMETRIC JSON <-> CONFIG) ==\r\n")
-    from_json, from_config = self.find_missing_drugs()
+    from_json, from_config = self._find_missing_drugs()
     print("Missing from JSON ({}): {}".format(len(from_json), ', '.join(from_json)))
     print("Missing from Config ({}): {}".format(len(from_config), ', '.join(from_config)))
 
     print("\r\n== MISSING DRUG COMBOS AND CSS CLASSES ==\r\n")
-    missing_combos, missing_classes = self.find_missing_combos()
-    missing_combos = ["{}+{}".format(a, b) for a, b in missing_combos]
-    print("Missing combos ({}): {}".format(len(missing_combos), ', '.join(missing_combos)))
-    print("Missing CSS classes ({}): {}".format(len(missing_classes), ', '.join(missing_classes)))
+    missing_combos, missing_classes, asymmetric_combos = self._find_missing_combos()
+    missing_combos = ["{}->{}".format(a, b) for a, b in missing_combos]
+    print("Combos missing in JSON ({}): {}".format(len(missing_combos), ', '.join(missing_combos)))
+    print("Missing CSS classes for interactions ({}): {}".format(len(missing_classes), ', '.join(missing_classes)))
 
+    print("\r\n== ASYMMETRIC DRUG COMBOS ==\r\n")
+    asymmetric_combos = ["{} ({})".format(combo, diff) for combo, diff in asymmetric_combos.items()]
+    print("Asymmetric combos ({}): {}".format(len(asymmetric_combos), ", ".join(asymmetric_combos)))
 if __name__ == "__main__":
   chart_generator = ChartGenerator()
   chart_generator.debug()
