@@ -19,22 +19,22 @@ body {
 }
 
 .synergy {
-  background-color: #168608;
+  background-color: #31b149;
 }
 .safe {
-  background-color: #09631A;
+  background-color: #278d3a;
 }
 .decrease {
   background-color: #006cb3;
 }
 .caution {
-  background-color: #D6C500;
+  background-color: #d5c625;
 }
 .unsafe {
-  background-color: #E6671C;
+  background-color: #d98427;
 }
 .dangerous {
-  background-color: #CC0B0B;
+  background-color: #d12128;
 }
 .serotoninsyndrome {
   background-color: #684099;
