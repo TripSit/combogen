@@ -6,8 +6,8 @@
 * Run **python -m combogen**
 
 ## How to configure
-* Edit config.json
-* Edit __main__.py (Chart version - will be moved to config.json soon)
+* Edit **config.json**
+* Edit \_\_main\_\_.py (Chart version text in upper right corner- will be moved to config.json soon)
 
 ## How to convert to PNG
 * Create HTML
