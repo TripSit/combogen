@@ -99,9 +99,3 @@ class ChartGenerator(object):
     print("\r\n== ASYMMETRIC DRUG COMBOS ==\r\n")
     asymmetric_combos = ["{} ({})".format(combo, diff) for combo, diff in asymmetric_combos.items()]
     print("Asymmetric combos ({}): {}".format(len(asymmetric_combos), ", ".join(asymmetric_combos)))
-if __name__ == "__main__":
-  chart_generator = ChartGenerator()
-  chart_generator.debug()
-  chart = chart_generator.generate("3.0 [PRE-RELEASE|DO-NOT-USE - SOME DATA MAY BE INACCURATE]")
-  with open(os.path.join(PROJECT_ROOT, 'drug-combinations.html'), 'w+') as f:
-    f.write(chart)
