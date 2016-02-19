@@ -11,7 +11,6 @@
       "NBOMes",
       "2C-x",
       "2C-T-x",
-      "aMT",
       "5-MeO-xxT",
       "Cannabis"
     ],
@@ -46,6 +45,9 @@
     "depressant",
     "antidepressant"
   ],
+  "rewriteInteraction": {
+    "serotonin syndrome": "dangerous"
+  },
   "interactionClass": {
     "low risk & synergy": ["synergy", "fa-arrow-up"],
     "low risk & no synergy": ["safe", "fa-thumbs-up"],

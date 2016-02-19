@@ -34,6 +34,12 @@ class Config(object):
             for group in self._config['tableOrder']
             for drug in group]
 
+  def rewriteInteraction(self, interaction):
+    try:
+      return self._config['rewriteInteraction'][interaction.lower()]
+    except KeyError:
+      return interaction
+
   def interaction_to_class(self, interaction):
     try:
       return self._config['interactionClass'][interaction.lower()][0]

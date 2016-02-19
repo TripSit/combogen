@@ -42,11 +42,13 @@ class DrugDatabase(object):
     drug_a_name = drug_a.lower() if isinstance(drug_a, str) else drug_a.name.lower()
     drug_b_name = drug_b.lower() if isinstance(drug_b, str) else drug_b.name.lower()
     try:
-      return self._combos[drug_a_name][drug_b_name]['status']
+      interaction = self._combos[drug_a_name][drug_b_name]['status']
+      return self._config.rewriteInteraction(interaction)
     except KeyError:
       if not strict:
         try:
-          return self._combos[drug_b_name][drug_a_name]['status']
+          interaction = self._combos[drug_b_name][drug_a_name]['status']
+          return self._config.rewriteInteraction(interaction)
         except KeyError:
           return None
 
