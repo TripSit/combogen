@@ -3,10 +3,9 @@ import json
 from collections import OrderedDict
 
 class DrugDatabase(object):
-  URL = "http://tripsit.me/combo_beta.json"
 
   def __init__(self, config):
-    self._combos = requests.get(DrugDatabase.URL).json()
+    self._combos = requests.get(config.url).json()
     self._config = config
     self._drug_groups = []
     self.load_groups()

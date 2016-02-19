@@ -3,7 +3,7 @@ import os
 
 chart_generator = ChartGenerator()
 chart_generator.debug()
-chart = chart_generator.generate("3.0 [PRE-RELEASE|DO-NOT-USE - SOME DATA MAY BE INACCURATE]")
+chart = chart_generator.generate()
 
 with open(os.path.join(PROJECT_ROOT, 'drug-combinations.html'), 'w+') as f:
   f.write(chart)

@@ -11,6 +11,14 @@ class Config(object):
     return self._config
 
   @property
+  def url(self):
+    return self._config['url']
+
+  @property
+  def version(self):
+    return self._config['version']
+
+  @property
   def grouped_table_order(self):
     groups_with_names = list()
 
