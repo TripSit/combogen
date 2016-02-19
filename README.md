@@ -7,7 +7,6 @@
 
 ## How to configure
 * Edit **config.json**
-* Edit \_\_main\_\_.py (Chart version text in upper right corner- will be moved to config.json soon)
 
 ## How to convert to PNG
 * Create HTML
