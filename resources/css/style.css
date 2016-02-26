@@ -131,7 +131,7 @@ header {
 
 
 #chart {
-  font-family: 'Univers', 'Open Sans', sans-serif;
+  font-family: 'Open Sans', 'Univers', 'Open Sans', sans-serif;
   height: 65%;
   width: 95%;
   margin: 0 auto;
