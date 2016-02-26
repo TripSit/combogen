@@ -35,10 +35,10 @@ body {
   background-color: #783f04;
 }
 
-.synergy {
+.safe {
   background-color: #31b149;
 }
-.safe {
+.synergy {
   background-color: #1d6a2b;
 }
 .decrease {
@@ -79,7 +79,7 @@ body {
 
 header {
   display: table;
-  padding-top: 1%;
+  padding-top: 0.2%;
   width: 95%;
   height: 15%;
   max-height: 15%;
@@ -108,7 +108,7 @@ header {
   vertical-align: middle;
 }
 #legend table {
-  width: 80%;
+  width: 70%;
   color: black;
   font-weight: 500;
   margin-left: auto;
@@ -128,7 +128,7 @@ header {
   table-layout: fixed;
 }
 #chart td {
-  font-size: 0.98rem;
+  font-size: 1.1rem;
   color: #FFFFFF;
   text-align: center;
   overflow: hidden;
@@ -136,7 +136,7 @@ header {
 
 
 footer {
-  margin: 0.5% auto 0;
+  margin: 1% auto 0;
   display: table;
   width: 95%;
   max-height: 10%;
