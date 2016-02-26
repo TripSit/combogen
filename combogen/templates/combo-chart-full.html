@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <span id="status">{{ status }}</span>
+    <header>
+      <div id="logo"><img src="resources/img/logo.svg" alt="logo"></div>
+      <h1 id="title">{{ title }}</h1>
+      <div id="legend">
+        {% include "legend.html" %}
+      </div>
+    </header>
+    {% include "combo-table.html" %}
+    <footer>
+      <aside>
+        <img src="resources/img/app_qr.svg" alt="app">
+        <h3>Mobile App</h3>
+      </aside>
+      <article id="disclaimer">{% include "disclaimer.html" %}</article>
+      <aside>
+        <img src="resources/img/support_qr.svg" alt="support">
+        <h3>Support Us</h3>
+      </aside>
+    </footer>
+    </div>
+</body>
+</html>

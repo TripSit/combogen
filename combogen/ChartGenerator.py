@@ -1,6 +1,5 @@
 from combogen.DrugDatabase import DrugDatabase
 from combogen.Config import Config
-from combogen.Utils import file_to_dataURI
 from jinja2 import Environment, PackageLoader
 from datetime import datetime, timezone
 import os
@@ -16,19 +15,13 @@ class ChartGenerator(object):
     self._env = Environment(loader=PackageLoader('combogen', 'templates'), lstrip_blocks=True, trim_blocks=True)
 
   def generate(self):
-    template = self._env.get_template('combo-chart-inline.html')
-    logo_data_uri = file_to_dataURI(os.path.join(PROJECT_ROOT, 'logo.svg'))
-    app_data_uri = file_to_dataURI(os.path.join(PROJECT_ROOT, 'app_qr.svg'))
-    support_data_uri = file_to_dataURI(os.path.join(PROJECT_ROOT, 'support_qr.svg'))
-    image_urls = {
-      'logo': logo_data_uri,
-      'app': app_data_uri,
-      'support': support_data_uri
-    }
-    generated = datetime.now(timezone.utc)
+    template = self._env.get_template('combo-chart-full.html')
+
+    time_generated = datetime.now(timezone.utc)
     status_msg = "Version {}<br>".format(self._config.version)
-    status_msg += "Generated on {} at {} UTC".format(generated.strftime("%d %b %Y"), generated.strftime("%H:%M"))
-    return template.render(title="Guide to Drug Combinations", status=status_msg, image_urls=image_urls, db=self._db, cfg=self._config)
+    status_msg += "Generated on {} at {} UTC".format(time_generated.strftime("%d %b %Y"), time_generated.strftime("%H:%M"))
+
+    return template.render(title="Guide to Drug Combinations", status=status_msg, db=self._db, cfg=self._config)
 
   def _find_missing_drugs(self):
     config_drugs = self._config.all_drugs_in_order

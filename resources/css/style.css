@@ -1,18 +1,18 @@
 @font-face {
   font-family: "AgencyFBCondensed";
-  src: url("resources/AgencyFBBoldCondensed.ttf");
+  src: url("../font/AgencyFBBoldCondensed.ttf");
 }
 @font-face {
   font-family: "UniversCondensedLight";
-  src: url("resources/Univers-CondensedLight.otf");
+  src: url("../font/Univers-CondensedLight.otf");
 }
 @font-face {
   font-family: "UniversLight";
-  src: url("resources/Univers-Light.otf");
+  src: url("../font/Univers-Light.otf");
 }
 @font-face {
   font-family: "Univers";
-  src: url("resources/Univers.otf");
+  src: url("../font/Univers.otf");
 }
 body {
   margin: 0;
