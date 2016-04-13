@@ -23,10 +23,11 @@
       {% else %}
         {% set interaction = db.interaction(drugA, drugB) %}
         {% set class = cfg.interaction_to_class(interaction) %}
-        {% set fa_icon = cfg.interaction_fa(interaction) %}
-        {% set content = '<i class="fa ' + fa_icon + '"></i>' %}
-        {% if class == "unknown" %}
-          {% set content = "{} + {} ({})".format(drugA.name, drugB.name, interaction) %}
+        {% if class == 'unknown' %}
+          {% set content = '<span>' + interaction + '</span>' %}
+          {% set class = class + ' label' %}
+        {% else %}
+          {% set content = '<i class="fa ' + cfg.interaction_icon(interaction) + '"></i>' %}
         {% endif %}
       {% endif %}
       <td class="{{ class }}">{{ content }}</td>

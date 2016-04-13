@@ -46,7 +46,7 @@ class Config(object):
     except KeyError:
       return self._config['interactionClass']['fallback'][0]
 
-  def interaction_fa(self, interaction):
+  def interaction_icon(self, interaction):
     try:
       return self._config['interactionClass'][interaction.lower()][1]
     except KeyError:
