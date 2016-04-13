@@ -1,6 +1,6 @@
 {
   "url": "http://nourishedcloud.com/combo_beta_beta.json",
-  "version": "3.0 [PRE-RELEASE|DO-NOT-USE - SOME DATA MAY BE INACCURATE]",
+  "version": "3.0",
   "tableOrder": [
     [
       "LSD",
@@ -50,10 +50,10 @@
   },
   "interactionClass": {
     "low risk & synergy": ["synergy", "fa-arrow-up"],
-    "low risk & no synergy": ["safe", "fa-thumbs-up"],
+    "low risk & no synergy": ["safe", "fa-dot-circle-o"],
     "low risk & decrease": ["decrease", "fa-arrow-down"],
     "caution": ["caution", "fa-warning"],
-    "unsafe": ["unsafe", "fa-thumbs-down"],
+    "unsafe": ["unsafe", "fa-heartbeat"],
     "dangerous": ["dangerous", "fa-times"],
     "serotonin syndrome": ["serotoninsyndrome", "fa-flash"],
     "fallback": ["unknown", "fa-question"]

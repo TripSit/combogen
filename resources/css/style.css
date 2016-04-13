@@ -115,9 +115,9 @@ header {
 }
 #legend {
   font-family: 'Open Sans', sans-serif;
-  vertical-align: middle;
 }
 #legend table {
+  height: 90px;
   width: 70%;
   color: black;
   font-weight: 500;
@@ -125,8 +125,24 @@ header {
   text-align: center;
   table-layout: fixed;
 }
-#legend i {
+#legend td {
+  padding: 0;
+}
+#legend .legend-icon {
+  padding-top: 5px;
   color: white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  font-size: 1.5rem;
+}
+#legend .legend-content {
+  height: 60%;
+  margin-top: auto;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  overflow: hidden;
 }
 
 
@@ -145,6 +161,9 @@ header {
   text-align: center;
   overflow: hidden;
 }
+.fa {
+  text-shadow: 0 0 5px black;
+}
 
 footer {
   margin: 1% auto 0;
@@ -158,6 +177,7 @@ footer {
   font-weight: 500;
 }
 footer aside {
+  font-size: 1.5rem;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   display: table-cell;
