@@ -50,7 +50,9 @@ class DrugDatabase(object):
           interaction = self._combos[drug_b_name][drug_a_name]['status']
           return self._config.rewriteInteraction(interaction)
         except KeyError:
-          return None
+          return 'NXDRUG'
+      else:
+        return 'NXDRUG'
 
   def is_drug_in_combos(self, drug):
     all_drugs = list(map(str.lower, self._combos.keys()))
