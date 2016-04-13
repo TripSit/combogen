@@ -110,9 +110,6 @@ class Drug(object):
   def group(self):
     return self._group
 
-  def interaction_with(self, other):
-    return self._db.interaction(self, other)
-
   def __eq__(self, other):
     return isinstance(other, Drug) and self.id == other.id
 
