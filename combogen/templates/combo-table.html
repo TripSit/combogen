@@ -2,7 +2,7 @@
   <tr>
     <td></td>
     {% for drug in db.drugs %}
-    <td class="{{ drug.group.name }} label"><span>{{ drug.name }}</span></td>
+    <td class="{{ drug.group.name }} label"><span>{{ db.translate(lang, drug.name) }}</span></td>
     {% endfor %}
     <td></td>
   </tr>
@@ -12,14 +12,14 @@
 {{ horizontal_table_header() }}
 
 {% for drugA in db.drugs %}
-{% set outer = loop %}
+  {% set outer = loop %}
   <tr>
-    <td class="{{ drugA.group.name }} label"><span>{{ drugA.name }}</span></td>
+    <td class="{{ drugA.group.name }} label"><span>{{ db.translate(lang, drugA.name) }}</span></td>
     {% for drugB in db.drugs %}
       {% set inner = loop %}
       {% if drugA == drugB %}
         {% set class = drugA.group.name + " label" %}
-        {% set content = "<span>" + drugA.name + "</span>" %}
+        {% set content = "<span>" + db.translate(lang, drugA.name) + "</span>" %}
       {% else %}
         {% set interaction = db.interaction(drugA, drugB) %}
         {% set class = cfg.interaction_to_class(interaction) %}
@@ -32,7 +32,7 @@
       {% endif %}
       <td class="{{ class }}">{{ content }}</td>
     {% endfor %}
-    <td class="{{ drugA.group.name }} label"><span>{{ drugA.name }}</span></td>
+    <td class="{{ drugA.group.name }} label"><span>{{ db.translate(lang, drugA.name) }}</span></td>
   </tr>
 {% endfor %}
 

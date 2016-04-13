@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' type='text/css'>
+  <link rel="stylesheet" href="resources/css/font-awesome.min.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <script src="resources/js/jquery-2.2.1.min.js"></script>
+  <script src="resources/js/jquery.textfill.min.js"></script>
+  <script src="resources/js/script.js"></script>
+</head>
+<body>
+  <div id="container">
+    <span id="status">Version 3.0<br>Generated on 13 Apr 2016 at 06:23 UTC</span>
+    <header>
+      <div id="logo"><img src="resources/img/logo.svg" alt="logo"></div>
+      <h1 id="title">Guide to Drug Combinations</h1>
+      <div id="legend">
+<table>
+  <tr>
+    <td class="synergy">  <i class="fa fa-arrow-up"></i><br>Low Risk & Synergy
+</td>
+    <td class="safe">  <i class="fa fa-thumbs-up"></i><br>Low Risk & No Synergy
+</td>
+    <td class="decrease">  <i class="fa fa-arrow-down"></i><br>Low Risk & Decrease
+</td>
+    <td class="caution">  <i class="fa fa-warning"></i><br>Caution
+</td>
+    <td class="unsafe">  <i class="fa fa-thumbs-down"></i><br>Unsafe
+</td>
+    <td class="dangerous">  <i class="fa fa-times"></i><br>Dangerous
+</td>
+    <!--<td class="serotoninsyndrome">  <i class="fa fa-flash"></i><br>Serotonin Syndrome
+</td>-->
+  </tr>
+</table>      </div>
+    </header>
+
+<table id="chart">
+  <tr>
+    <td></td>
+    <td class="psychedelic label"><span>LSD</span></td>
+    <td class="psychedelic label"><span>Mushrooms</span></td>
+    <td class="psychedelic label"><span>DMT</span></td>
+    <td class="psychedelic label"><span>Mescaline</span></td>
+    <td class="psychedelic label"><span>DOx</span></td>
+    <td class="psychedelic label"><span>NBOMes</span></td>
+    <td class="psychedelic label"><span>2C-x</span></td>
+    <td class="psychedelic label"><span>2C-T-x</span></td>
+    <td class="psychedelic label"><span>5-MeO-xxT</span></td>
+    <td class="psychedelic label"><span>Cannabis</span></td>
+    <td class="dissociative label"><span>Ketamine</span></td>
+    <td class="dissociative label"><span>MXE</span></td>
+    <td class="dissociative label"><span>DXM</span></td>
+    <td class="dissociative label"><span>Nitrous</span></td>
+    <td class="stimulant label"><span>Amphetamines</span></td>
+    <td class="stimulant label"><span>MDMA</span></td>
+    <td class="stimulant label"><span>Cocaine</span></td>
+    <td class="stimulant label"><span>Caffeine</span></td>
+    <td class="depressant label"><span>Alcohol</span></td>
+    <td class="depressant label"><span>GHB/GBL</span></td>
+    <td class="depressant label"><span>Opioids</span></td>
+    <td class="depressant label"><span>Tramadol</span></td>
+    <td class="depressant label"><span>Benzodiazepines</span></td>
+    <td class="antidepressant label"><span>MAOIs</span></td>
+    <td class="antidepressant label"><span>SSRIs</span></td>
+    <td></td>
+  </tr>
+
+
+  <tr>
+    <td class="psychedelic label"><span>LSD</span></td>
+      <td class="psychedelic label"><span>LSD</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>LSD</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>Mushrooms</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="psychedelic label"><span>Mushrooms</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>Mushrooms</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>DMT</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="psychedelic label"><span>DMT</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>DMT</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>Mescaline</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="psychedelic label"><span>Mescaline</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>Mescaline</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>DOx</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="psychedelic label"><span>DOx</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>DOx</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>NBOMes</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="psychedelic label"><span>NBOMes</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>NBOMes</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>2C-x</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="psychedelic label"><span>2C-x</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>2C-x</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>2C-T-x</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="psychedelic label"><span>2C-T-x</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>2C-T-x</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>5-MeO-xxT</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="psychedelic label"><span>5-MeO-xxT</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="psychedelic label"><span>5-MeO-xxT</span></td>
+  </tr>
+  <tr>
+    <td class="psychedelic label"><span>Cannabis</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="psychedelic label"><span>Cannabis</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="psychedelic label"><span>Cannabis</span></td>
+  </tr>
+  <tr>
+    <td class="dissociative label"><span>Ketamine</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="dissociative label"><span>Ketamine</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="dissociative label"><span>Ketamine</span></td>
+  </tr>
+  <tr>
+    <td class="dissociative label"><span>MXE</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="dissociative label"><span>MXE</span></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+    <td class="dissociative label"><span>MXE</span></td>
+  </tr>
+  <tr>
+    <td class="dissociative label"><span>DXM</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dissociative label"><span>DXM</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+    <td class="dissociative label"><span>DXM</span></td>
+  </tr>
+  <tr>
+    <td class="dissociative label"><span>Nitrous</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="dissociative label"><span>Nitrous</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="dissociative label"><span>Nitrous</span></td>
+  </tr>
+  <tr>
+    <td class="stimulant label"><span>Amphetamines</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="stimulant label"><span>Amphetamines</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="stimulant label"><span>Amphetamines</span></td>
+  </tr>
+  <tr>
+    <td class="stimulant label"><span>MDMA</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="stimulant label"><span>MDMA</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+    <td class="stimulant label"><span>MDMA</span></td>
+  </tr>
+  <tr>
+    <td class="stimulant label"><span>Cocaine</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="stimulant label"><span>Cocaine</span></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="stimulant label"><span>Cocaine</span></td>
+  </tr>
+  <tr>
+    <td class="stimulant label"><span>Caffeine</span></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="stimulant label"><span>Caffeine</span></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="stimulant label"><span>Caffeine</span></td>
+  </tr>
+  <tr>
+    <td class="depressant label"><span>Alcohol</span></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="depressant label"><span>Alcohol</span></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+    <td class="depressant label"><span>Alcohol</span></td>
+  </tr>
+  <tr>
+    <td class="depressant label"><span>GHB/GBL</span></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="depressant label"><span>GHB/GBL</span></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="depressant label"><span>GHB/GBL</span></td>
+  </tr>
+  <tr>
+    <td class="depressant label"><span>Opioids</span></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="depressant label"><span>Opioids</span></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="depressant label"><span>Opioids</span></td>
+  </tr>
+  <tr>
+    <td class="depressant label"><span>Tramadol</span></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="depressant label"><span>Tramadol</span></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+    <td class="depressant label"><span>Tramadol</span></td>
+  </tr>
+  <tr>
+    <td class="depressant label"><span>Benzodiazepines</span></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="depressant label"><span>Benzodiazepines</span></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+    <td class="depressant label"><span>Benzodiazepines</span></td>
+  </tr>
+  <tr>
+    <td class="antidepressant label"><span>MAOIs</span></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="unsafe"><i class="fa fa-thumbs-down"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="synergy"><i class="fa fa-arrow-up"></i></td>
+      <td class="antidepressant label"><span>MAOIs</span></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+    <td class="antidepressant label"><span>MAOIs</span></td>
+  </tr>
+  <tr>
+    <td class="antidepressant label"><span>SSRIs</span></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="decrease"><i class="fa fa-arrow-down"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="caution"><i class="fa fa-warning"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="safe"><i class="fa fa-thumbs-up"></i></td>
+      <td class="dangerous"><i class="fa fa-times"></i></td>
+      <td class="antidepressant label"><span>SSRIs</span></td>
+    <td class="antidepressant label"><span>SSRIs</span></td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td class="psychedelic label"><span>LSD</span></td>
+    <td class="psychedelic label"><span>Mushrooms</span></td>
+    <td class="psychedelic label"><span>DMT</span></td>
+    <td class="psychedelic label"><span>Mescaline</span></td>
+    <td class="psychedelic label"><span>DOx</span></td>
+    <td class="psychedelic label"><span>NBOMes</span></td>
+    <td class="psychedelic label"><span>2C-x</span></td>
+    <td class="psychedelic label"><span>2C-T-x</span></td>
+    <td class="psychedelic label"><span>5-MeO-xxT</span></td>
+    <td class="psychedelic label"><span>Cannabis</span></td>
+    <td class="dissociative label"><span>Ketamine</span></td>
+    <td class="dissociative label"><span>MXE</span></td>
+    <td class="dissociative label"><span>DXM</span></td>
+    <td class="dissociative label"><span>Nitrous</span></td>
+    <td class="stimulant label"><span>Amphetamines</span></td>
+    <td class="stimulant label"><span>MDMA</span></td>
+    <td class="stimulant label"><span>Cocaine</span></td>
+    <td class="stimulant label"><span>Caffeine</span></td>
+    <td class="depressant label"><span>Alcohol</span></td>
+    <td class="depressant label"><span>GHB/GBL</span></td>
+    <td class="depressant label"><span>Opioids</span></td>
+    <td class="depressant label"><span>Tramadol</span></td>
+    <td class="depressant label"><span>Benzodiazepines</span></td>
+    <td class="antidepressant label"><span>MAOIs</span></td>
+    <td class="antidepressant label"><span>SSRIs</span></td>
+    <td></td>
+  </tr>
+
+</table>    <footer>
+      <aside>
+        <img src="resources/img/app_qr.svg" alt="app">
+        <h3>Mobile App</h3>
+      </aside>
+      <article id="disclaimer">This information has been researched to the best ability by the TripSit team, and the greatest effort has been made not to include incorrect or misleading information though some information may never be 100% accurate.<br>
+<b>This chart is meant as a quick reference guide and additional research must always be done.</b> It is not sufficient to only consult this chart when considering a combination. Use at your own risk and please try to be safe.<br>
+When mixing drugs keep potentiation in mind and start with lower doses of each substance.<br>
+For more information on specific drugs visit http://drugs.tripsit.me<br>
+<h3>Up-to-date information, details, explanations and references will be published on http://combo.tripsit.me</h3></article>
+      <aside>
+        <img src="resources/img/support_qr.svg" alt="support">
+        <h3>Support Us</h3>
+      </aside>
+    </footer>
+    </div>
+</body>
+</html>

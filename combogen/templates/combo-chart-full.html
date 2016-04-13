@@ -15,7 +15,7 @@
     <span id="status">{{ status }}</span>
     <header>
       <div id="logo"><img src="resources/img/logo.svg" alt="logo"></div>
-      <h1 id="title">{{ title }}</h1>
+      <h1 id="title">{{ cfg.translate(lang, "title") }}</h1>
       <div id="legend">
         {% include "legend.html" %}
       </div>
@@ -26,7 +26,7 @@
         <img src="resources/img/app_qr.svg" alt="app">
         <h3>Mobile App</h3>
       </aside>
-      <article id="disclaimer">{% include "disclaimer.html" %}</article>
+      <article id="disclaimer">{% include "disclaimer-" + lang + ".html" %}</article>
       <aside>
         <img src="resources/img/support_qr.svg" alt="support">
         <h3>Support Us</h3>

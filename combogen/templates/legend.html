@@ -1,5 +1,5 @@
 {% macro fa_label(interaction) %}
-  <i class="fa {{ cfg.interaction_icon(interaction) }}"></i><br>{{ interaction }}
+  <i class="fa {{ cfg.interaction_icon(interaction) }}"></i><br>{{ cfg.translate_interaction(lang, interaction) }}
 {% endmacro %}
 <table>
   <tr>

@@ -54,6 +54,12 @@ class DrugDatabase(object):
       else:
         return 'NXDRUG'
 
+  """
+  *Translations intensify*
+  """
+  def translate(self, lang, drug):
+    return self._config.translate_drug(lang, drug)
+
   def is_drug_in_combos(self, drug):
     all_drugs = list(map(str.lower, self._combos.keys()))
     return drug.lower() in all_drugs

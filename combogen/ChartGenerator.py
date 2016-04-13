@@ -6,6 +6,7 @@ import os
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 TEMPLATE_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), 'templates'))
+TRANSLATIONS_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), 'translations'))
 
 class ChartGenerator(object):
   
@@ -14,14 +15,14 @@ class ChartGenerator(object):
     self._db = DrugDatabase(self._config)
     self._env = Environment(loader=PackageLoader('combogen', 'templates'), lstrip_blocks=True, trim_blocks=True)
 
-  def generate(self):
+  def generate(self, lang):
     template = self._env.get_template('combo-chart-full.html')
 
     time_generated = datetime.now(timezone.utc)
     status_msg = "Version {}<br>".format(self._config.version)
     status_msg += "Generated on {} at {} UTC".format(time_generated.strftime("%d %b %Y"), time_generated.strftime("%H:%M"))
 
-    return template.render(title="Guide to Drug Combinations", status=status_msg, db=self._db, cfg=self._config)
+    return template.render(status=status_msg, lang=lang, db=self._db, cfg=self._config)
 
   def _find_missing_drugs(self):
     config_drugs = self._config.all_drugs_in_order
