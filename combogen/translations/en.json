@@ -1,5 +1,7 @@
 {
   "title": "Guide to Drug Combinations",
+  "app": "Mobile App",
+  "support": "Support Us",
   "drugs": {
     "lsd": "LSD",
     "mushrooms": "Mushrooms",
@@ -34,7 +36,6 @@
     "caution": "Caution",
     "unsafe": "Unsafe",
     "dangerous": "Dangerous",
-    "serotonin syndrome": "Serotonin Syndrome",
     "fallback": "Fallback"
   }
 }

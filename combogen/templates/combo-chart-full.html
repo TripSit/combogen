@@ -24,12 +24,12 @@
     <footer>
       <aside>
         <img src="resources/img/app_qr.svg" alt="app">
-        <h3>Mobile App</h3>
+        <h3>{{ cfg.translate(lang, "app") }}</h3>
       </aside>
       <article id="disclaimer">{% include "disclaimer-" + lang + ".html" %}</article>
       <aside>
         <img src="resources/img/support_qr.svg" alt="support">
-        <h3>Support Us</h3>
+        <h3>{{ cfg.translate(lang, "support") }}</h3>
       </aside>
     </footer>
     </div>
