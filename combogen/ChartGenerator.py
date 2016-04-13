@@ -44,7 +44,7 @@ class ChartGenerator(object):
     all_drugs = self._config.all_drugs_in_order
 
     missing = set()
-    missing_classes = set()
+    unknown_interactions = set()
     asymmetric_combos = dict()
     for drug_a in all_drugs:
       for drug_b in all_drugs:
@@ -57,18 +57,18 @@ class ChartGenerator(object):
         if a_to_b is None:
           missing.add((drug_a, drug_b))
         elif self._config.interaction_to_class(a_to_b) == "unknown":
-          missing_classes.add(repr(a_to_b))
+          unknown_interactions.add(repr(a_to_b))
 
         if b_to_a is None:
           missing.add((drug_b, drug_a))
         elif self._config.interaction_to_class(b_to_a) == "unknown":
-          missing_classes.add(repr(b_to_a))
+          unknown_interactions.add(repr(b_to_a))
 
         if (a_to_b is not None and b_to_a is not None) and a_to_b != b_to_a:
           if "{}+{}".format(drug_b, drug_a) not in asymmetric_combos.keys():
             asymmetric_combos["{}+{}".format(drug_a, drug_b)] = "'{}', '{}'".format(a_to_b, b_to_a)
 
-    return (missing, missing_classes, asymmetric_combos)
+    return (missing, asymmetric_combos, unknown_interactions)
 
   def debug(self):
     print("== DRUG GROUPS IN DATABASE (FROM CONFIG) ==\r\n")
@@ -83,11 +83,11 @@ class ChartGenerator(object):
     print("Missing from JSON ({}): {}".format(len(from_json), ', '.join(from_json)))
     print("Missing from Config ({}): {}".format(len(from_config), ', '.join(from_config)))
 
-    print("\r\n== MISSING DRUG COMBOS AND CSS CLASSES ==\r\n")
-    missing_combos, missing_classes, asymmetric_combos = self._find_missing_combos()
+    print("\r\n== MISSING DRUG COMBO DEFINITIONS AND  UNKNOWN INTERACTIONS ==\r\n")
+    missing_combos, asymmetric_combos, unknown_interactions = self._find_missing_combos()
     missing_combos = ["{}->{}".format(a, b) for a, b in missing_combos]
     print("Combos missing in JSON ({}): {}".format(len(missing_combos), ', '.join(missing_combos)))
-    print("Missing CSS classes for interactions ({}): {}".format(len(missing_classes), ', '.join(missing_classes)))
+    print("Unknown interactions ({}): {}".format(len(unknown_interactions), ', '.join(unknown_interactions)))
 
     print("\r\n== ASYMMETRIC DRUG COMBOS ==\r\n")
     asymmetric_combos = ["{} ({})".format(combo, diff) for combo, diff in asymmetric_combos.items()]
