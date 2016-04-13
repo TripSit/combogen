@@ -10,7 +10,7 @@ $(function(){
   // explicitWidth: Add some space so cell isn't 100% filled side-to-side
   $('#chart .label').textfill({
     widthOnly: true,
-    explicitWidth: baseWidth,
+    /*explicitWidth: baseWidth,*/
     maxFontPixels: baseFontSize
   });
 });

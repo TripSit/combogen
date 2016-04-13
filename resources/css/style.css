@@ -77,8 +77,8 @@ body {
 #status {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
-  top: 2%;
-  right: 3%;
+  top: 1%;
+  right: 2.5%;
   color: #757575;
   font-size: 1.4rem;
   text-align: right;
@@ -131,9 +131,11 @@ header {
 
 
 #chart {
-  font-family: 'Open Sans', 'Univers', 'Open Sans', sans-serif;
+  font-family: 'Open Sans', 'Univers', sans-serif;
   height: 65%;
+  max-height: 65%;
   width: 95%;
+  max-width: 95%;
   margin: 0 auto;
   table-layout: fixed;
 }
@@ -143,7 +145,6 @@ header {
   text-align: center;
   overflow: hidden;
 }
-
 
 footer {
   margin: 1% auto 0;
