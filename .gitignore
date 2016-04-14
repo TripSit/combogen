@@ -1,6 +1,4 @@
 .idea/
 __pycache__/
-drug-combinations.svg
-drug-combinations.html
-drug-combinations.png
+drug-combinations*
 npm-debug.log
