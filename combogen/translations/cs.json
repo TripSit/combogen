@@ -26,8 +26,8 @@
     "opioids": "Opioidy",
     "tramadol": "Tramadol",
     "benzodiazepines": "Benzodiazepiny",
-    "maois": "MAOIs",
-    "ssris": "SSRIs"
+    "maois": "MAOI",
+    "ssris": "SSRI"
   },
   "interactions": {
     "low risk & synergy": "Nízký risk a synergie",
