@@ -60,6 +60,7 @@ html {
   font-size: 16px;
   width: 3800px;
   height: 1600px;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -69,52 +70,48 @@ body {
 }
 
 #container {
-  position:  relative;
+  position: relative;
   background-color: #000000;
-  width: 100%;
+  padding: 0.5% 2% 0 2%;
   height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 #status {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
   top: 1%;
-  right: 2.5%;
-  color: #757575;
+  right: 0;
+  color: #414141;
   font-size: 1.4rem;
   text-align: right;
   font-weight: 700;
 }
 
 header {
-  display: table;
-  padding-top: 0.5%;
-  width: 95%;
-  height: 15%;
-  max-height: 15%;
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 13%;
 }
-#logo, #legend {
-  display: table-cell;
-  min-width: 30%;
-  width: 30%;
-}
-#logo img {
-  max-height: 40%;
+#logo {
+  position: absolute;
+  max-height: 90%;
 }
 #title {
-  position: relative;
-  bottom: 4%;
   font-family: 'AgencyFBCondensed', 'Open Sans', sans-serif;
   color: #FFFFFF;
   font-weight: 300;
+  transform: translateY(5%);
   font-size: 9rem;
   text-align: center;
-  display: table-cell;
-  width: 40%;
-  vertical-align: middle;
+  margin: 0 auto;
 }
 #legend {
+  position: absolute;
+  bottom: 15%;
+  right: 0;
   font-family: 'Open Sans', sans-serif;
+  width: 35%;
 }
 #legend table {
   height: 90px;
@@ -150,8 +147,8 @@ header {
   font-family: 'Open Sans', 'Univers', sans-serif;
   height: 65%;
   max-height: 65%;
-  width: 95%;
-  max-width: 95%;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   table-layout: fixed;
 }
@@ -166,32 +163,35 @@ header {
 }
 
 footer {
+  position: relative;
   margin: 1% auto 0;
-  display: table;
-  width: 95%;
-  max-height: 10%;
+  width: 100%;
   height: 10%;
   color: #757575;
   text-align: center;
   font-size: 1.6rem;
   font-weight: 500;
 }
-footer aside {
+footer .qr {
+  position: absolute;
+  width: 8%;
+  top: 0;
   font-size: 1.5rem;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  display: table-cell;
-  width: 8%;
 }
-footer aside img {
+footer .qr:last-child {
+  right: 0;
+}
+footer .qr img {
   display: inline-block;
   width: 70%;
 }
-footer aside h3 {
+footer .qr h3 {
   margin: 0;
 }
-#disclaimer {
+footer #disclaimer {
   font-family: 'UniversLight', 'Open Sans', sans-serif;
-  display: table-cell;
-  vertical-align: top;
+  width: 75%;
+  margin: 0 auto;
 }

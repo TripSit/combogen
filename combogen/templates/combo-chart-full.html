@@ -12,9 +12,9 @@
 </head>
 <body>
   <div id="container">
-    <span id="status">{{ status }}</span>
     <header>
-      <div id="logo"><img src="resources/img/logo.svg" alt="logo"></div>
+      <span id="status">{{ status }}</span>
+      <img id="logo" src="resources/img/logo.svg" alt="logo">
       <h1 id="title">{{ cfg.translate(lang, "title") }}</h1>
       <div id="legend">
         {% include "legend.html" %}
@@ -22,15 +22,15 @@
     </header>
     {% include "combo-table.html" %}
     <footer>
-      <aside>
+      <div class="qr">
         <img src="resources/img/app_qr.svg" alt="app">
         <h3>{{ cfg.translate(lang, "app") }}</h3>
-      </aside>
-      <article id="disclaimer">{% include "disclaimer-" + lang + ".html" %}</article>
-      <aside>
+      </div>
+      <div id="disclaimer">{% include "disclaimer-" + lang + ".html" %}</div>
+      <div class="qr">
         <img src="resources/img/support_qr.svg" alt="support">
         <h3>{{ cfg.translate(lang, "support") }}</h3>
-      </aside>
+      </div>
     </footer>
     </div>
 </body>
