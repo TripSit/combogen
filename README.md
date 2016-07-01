@@ -1,5 +1,7 @@
-* Python 3 required
+* Python 3 and Node.js required
+* Make sure Python, Node and NPM are in your PATH
 * pip install requests jinja2
+* npm install
 
 ## How to run
 * **cd** into root directory
@@ -8,7 +10,7 @@
 ## How to configure
 * Edit **config.json**
 
-## How to convert to PNG
-* Create HTML
-* Open drug-combinations.html in browser
-* Use extensions such as [Full page screen capture](https://chrome.google.com/webstore/detail/full-page-screen-capture/fdpohaocaechififmbbbbbknoalclacl) because all webkit-to-png libraries are broken in some way.
+## Where do I find the chart?
+* Run the script
+* PNGs are located in output/png/
+* PDFs are located in output/pdf/
