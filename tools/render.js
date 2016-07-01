@@ -12,6 +12,7 @@ var targetPath = 'file://' + path.join(currentDir, '..', target + '.html');
 nightmare
   .viewport(width, height)
   .goto(targetPath)
+  .wait(250)
   .screenshot(path.join(currentDir, '..', 'output', 'png', target + '.png'))
   .end()
   .catch(function (error) {
