@@ -2,3 +2,4 @@
 __pycache__/
 drug-combinations*
 npm-debug.log
+node_modules/
