@@ -49,18 +49,22 @@
 .dangerous {
   background-color: #d12128;
 }
-.serotoninsyndrome {
-  background-color: #684099;
-}
 .unknown {
   background-color: #6f6f6f;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
+  box-sizing: border-box;
   width: 3800px;
   height: 1600px;
-  box-sizing: border-box;
+  overflow: hidden;
+
+  font-size: 16px;
 }
 body {
   margin: 0;
@@ -107,39 +111,41 @@ header {
   margin: 0 auto;
 }
 #legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: absolute;
   bottom: 15%;
   right: 0;
+  width: 25%;
   font-family: 'Open Sans', sans-serif;
-  width: 35%;
-}
-#legend table {
-  height: 90px;
-  width: 70%;
-  color: black;
-  font-weight: 500;
-  margin-left: auto;
-  text-align: center;
-  table-layout: fixed;
-}
-#legend td {
-  padding: 0;
-}
-#legend .legend-icon {
-  padding-top: 5px;
   color: white;
+}
+.legend-card {
+  display: flex;
+  flex: 1 1 0;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.legend-card + .legend-card{
+  margin-left: 5px;
+}
+.legend-icon {
+  flex: 1 1 0;
+  width: 100%;
+  text-align: center;
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   font-size: 1.5rem;
 }
-#legend .legend-content {
-  height: 60%;
-  margin-top: auto;
-  padding-top: 5px;
-  padding-bottom: 3px;
+.legend-content {
+  flex: 3 3 0;
+  width: 100%;
+  box-sizing: content-box;
+  padding: 5px;
+  text-align: center;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
   font-weight: 700;
-  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 
@@ -155,6 +161,7 @@ header {
 #chart td {
   font-size: 1.1rem;
   color: #FFFFFF;
+  border-radius: 1px;
   text-align: center;
   overflow: hidden;
 }
@@ -174,8 +181,8 @@ footer {
 }
 footer .qr {
   position: absolute;
-  width: 8%;
   top: 0;
+  width: 8%;
   font-size: 1.5rem;
   font-family: 'Open Sans', sans-serif;
   text-align: center;

@@ -2,13 +2,9 @@
   <div class="legend-icon"><i class="fa {{ cfg.interaction_icon(interaction) }}"></i></div>
   <div class="legend-content">{{ cfg.translate_interaction(lang, interaction) }}</div>
 {% endmacro %}
-<table>
-  <tr>
-    <td class="synergy">{{ fa_label("Low Risk & Synergy") }}</td>
-    <td class="safe">{{ fa_label("Low Risk & No Synergy") }}</td>
-    <td class="decrease">{{ fa_label("Low Risk & Decrease") }}</td>
-    <td class="caution">{{ fa_label("Caution") }}</td>
-    <td class="unsafe">{{ fa_label("Unsafe") }}</td>
-    <td class="dangerous">{{ fa_label("Dangerous") }}</td>
-  </tr>
-</table>
+<div class="legend-card synergy">{{ fa_label("Low Risk & Synergy") }}</div>
+<div class="legend-card safe">{{ fa_label("Low Risk & No Synergy") }}</div>
+<div class="legend-card decrease">{{ fa_label("Low Risk & Decrease") }}</div>
+<div class="legend-card caution">{{ fa_label("Caution") }}</div>
+<div class="legend-card unsafe">{{ fa_label("Unsafe") }}</div>
+<div class="legend-card dangerous">{{ fa_label("Dangerous") }}</div>
