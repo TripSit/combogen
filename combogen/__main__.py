@@ -11,3 +11,5 @@ for file in os.listdir(TRANSLATIONS_ROOT):
 
     with open(os.path.join(PROJECT_ROOT, 'drug-combinations-{}.html'.format(lang)), 'w+') as f:
       f.write(chart)
+
+    print('Generated chart for {}'.format(lang))

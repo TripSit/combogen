@@ -1,6 +1,6 @@
 from combogen.DrugDatabase import DrugDatabase
 from combogen.Config import Config
-from jinja2 import Environment, PackageLoader
+from jinja2 import Environment, PackageLoader, FileSystemLoader
 from datetime import datetime, timezone
 import os
 
@@ -13,7 +13,7 @@ class ChartGenerator(object):
   def __init__(self):
     self._config = Config(os.path.join(PROJECT_ROOT, 'config.json'))
     self._db = DrugDatabase(self._config)
-    self._env = Environment(loader=PackageLoader('combogen', 'templates'), lstrip_blocks=True, trim_blocks=True)
+    self._env = Environment(loader=FileSystemLoader([TEMPLATE_ROOT, TRANSLATIONS_ROOT]), lstrip_blocks=True, trim_blocks=True)
 
   def generate(self, lang):
     template = self._env.get_template('combo-chart-full.html')
