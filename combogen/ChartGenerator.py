@@ -4,10 +4,11 @@ from jinja2 import Environment, PackageLoader, FileSystemLoader
 from datetime import datetime, timezone
 import os
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-TEMPLATE_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), 'templates'))
-TRANSLATIONS_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), 'translations'))
-
+CURRENT_PATH = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_PATH, '..'))
+TEMPLATE_ROOT = os.path.abspath(os.path.join(CURRENT_PATH, 'templates'))
+TRANSLATIONS_ROOT = os.path.abspath(os.path.join(CURRENT_PATH, 'translations'))
+TOOLS_ROOT = os.path.abspath(os.path.join(PROJECT_ROOT, 'tools'))
 
 class ChartGenerator(object):
     def __init__(self):
