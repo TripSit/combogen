@@ -1,6 +1,6 @@
 {% macro fa_label(interaction) %}
-  <div class="legend-icon"><i class="fa {{ cfg.interaction_icon(interaction) }}"></i></div>
-  <div class="legend-content">{{ cfg.translate_interaction(lang, interaction) }}</div>
+    <div class="legend-icon"><i class="fa {{ cfg.interaction_icon(interaction) }}"></i></div>
+    <div class="legend-content">{{ cfg.translate_interaction(lang, interaction) }}</div>
 {% endmacro %}
 <div class="legend-card synergy">{{ fa_label("Low Risk & Synergy") }}</div>
 <div class="legend-card safe">{{ fa_label("Low Risk & No Synergy") }}</div>

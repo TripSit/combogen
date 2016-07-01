@@ -5,11 +5,11 @@ chart_generator = ChartGenerator()
 chart_generator.debug()
 
 for file in os.listdir(TRANSLATIONS_ROOT):
-  if (file.endswith(".json")):
-    lang = file.split(".")[0]
-    chart = chart_generator.generate(lang)
+    if (file.endswith(".json")):
+        lang = file.split(".")[0]
+        chart = chart_generator.generate(lang)
 
-    with open(os.path.join(PROJECT_ROOT, 'drug-combinations-{}.html'.format(lang)), 'w+') as f:
-      f.write(chart)
+        with open(os.path.join(PROJECT_ROOT, 'drug-combinations-{}.html'.format(lang)), 'w+') as f:
+            f.write(chart)
 
-    print('Generated chart for {}'.format(lang))
+        print('Generated chart for {}'.format(lang))
