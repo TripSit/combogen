@@ -1,0 +1,22 @@
+{
+  "name": "combogen",
+  "version": "1.0.0",
+  "description": "Generate PNG and PDF files from HTML combo charts",
+  "dependencies": {
+    "nightmare": "^2.5.2",
+    "phantomjs": "^2.1.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TripSit/combogen.git"
+  },
+  "author": "shiinko",
+  "bugs": {
+    "url": "https://github.com/TripSit/combogen/issues"
+  },
+  "homepage": "https://github.com/TripSit/combogen#readme"
+}
