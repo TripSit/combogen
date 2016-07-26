@@ -5,6 +5,7 @@
 
 ## How to run
 * **cd** into root directory
+* Run **npm install**
 * Run **python -m combogen**
 
 ## How to configure
