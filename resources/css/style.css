@@ -58,12 +58,11 @@
 }
 
 html {
-  font-size: 16px;
   box-sizing: border-box;
   width: 3800px;
   height: 1600px;
   overflow: hidden;
-
+  
   font-size: 16px;
 }
 body {
@@ -165,6 +164,12 @@ header {
   text-align: center;
   overflow: hidden;
 }
+
+/* #chart td span {
+  padding: 0 1px
+}
+*/
+
 .fa {
   text-shadow: 0 0 3px black;
 }
