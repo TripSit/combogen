@@ -30,6 +30,18 @@ class Config(object):
         return self._config['version']
 
     @property
+    def width(self):
+        return self._config['chart']['width']
+
+    @property
+    def height(self):
+        return self._config['chart']['height']
+
+    @property
+    def rel_resources_path(self):
+        return self._config['chart']['htmlRelativeResources']
+
+    @property
     def grouped_table_order(self):
         groups_with_names = list()
 

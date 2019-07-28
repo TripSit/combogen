@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html style="width: {{ cfg.width }}px; height: {{ cfg.height }}px;">
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' type='text/css'>
-    <link rel="stylesheet" href="resources/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="{{ cfg.rel_resources_path }}/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ cfg.rel_resources_path }}/css/style.css">
 </head>
 <body>
 <div id="container">
     <header>
         <span id="status">{{ status }}</span>
-        <img id="logo" src="resources/img/logo.svg" alt="logo">
+        <img id="logo" src="{{ cfg.rel_resources_path }}/img/logo.svg" alt="logo">
         <h1 id="title">{{ cfg.translate(lang, "title") }}</h1>
         <div id="legend">
             {% include "legend.html" %}
@@ -20,12 +20,12 @@
     {% include "combo-table.html" %}
     <footer>
         <div class="qr">
-            <img src="resources/img/app_qr.svg" alt="app">
+            <img src="{{ cfg.rel_resources_path }}/img/app_qr.svg" alt="app">
             <h3>{{ cfg.translate(lang, "app") }}</h3>
         </div>
         <div id="disclaimer">{% include "disclaimer-" + lang + ".html" %}</div>
         <div class="qr">
-            <img src="resources/img/support_qr.svg" alt="support">
+            <img src="{{ cfg.rel_resources_path }}/img/support_qr.svg" alt="support">
             <h3>{{ cfg.translate(lang, "support") }}</h3>
         </div>
     </footer>

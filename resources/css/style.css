@@ -59,8 +59,6 @@
 
 html {
   box-sizing: border-box;
-  width: 3800px;
-  height: 1600px;
   overflow: hidden;
   
   font-size: 16px;

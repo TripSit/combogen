@@ -57,5 +57,10 @@
     "dangerous": ["dangerous", "fa-times"],
     "serotonin syndrome": ["serotoninsyndrome", "fa-flash"],
     "fallback": ["unknown", "fa-question"]
+  },
+  "chart": {
+    "width": 3800,
+    "height": 1600,
+    "htmlRelativeResources": "../../resources"
   }
 }

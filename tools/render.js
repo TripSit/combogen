@@ -3,18 +3,25 @@ var nightmare = Nightmare({ show: false });
 var path = require('path');
 
 var target = process.argv[2];
-var width = process.argv[3] || 3800;
-var height = process.argv[4] || 1600;
+var width = parseInt(process.argv[3]) || 3800;
+var height = parseInt(process.argv[4]) || 1600;
 
 var currentDir = path.dirname(process.argv[1]);
-var targetPath = 'file://' + path.join(currentDir, '..', target + '.html');
+
+var outFilename = path.basename(target, '.html') + '.png';
+var outFilePath = path.join(currentDir, '..', 'output', 'png',  outFilename);
+
+console.log('Rendering...');
+// console.log('argv:', process.argv);
+console.log('target:', target);
+console.log('out:', outFilePath);
 
 nightmare
   .viewport(width, height)
-  .goto(targetPath)
+  .goto(`file://${target}`)
   .wait(250)
-  .screenshot(path.join(currentDir, '..', 'output', 'png', target + '.png'))
+  .screenshot(outFilePath)
   .end()
   .catch(function (error) {
-    console.error('error:', error);
+    console.error('Error:', error);
   });
