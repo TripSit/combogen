@@ -7,13 +7,15 @@ const target = process.argv[2];
 const width = parseInt(process.argv[3]) || 3800;
 const height = parseInt(process.argv[4]) || 1600;
 
-const outFilename = path.basename(target, '.html') + '.png';
-const outFilePath = path.join(currentDir, '..', 'output', 'png', outFilename);
+const baseName = path.basename(target, '.html');
+const outFilePathPNG = path.join(currentDir, '..', 'output', 'png', `${baseName}.png`);
+const outFilePathPDF = path.join(currentDir, '..', 'output', 'pdf', `${baseName}.pdf`);
 
 console.log('Rendering...');
-console.log('argv:', process.argv);
-console.log('target:', target);
-console.log('out:', outFilePath);
+console.log('HTML:', target);
+//console.log('argv:', process.argv);
+console.log('PNG:', outFilePathPNG);
+console.log('PDF:', outFilePathPDF);
 
 // Render assets...
 (async () => {
@@ -24,8 +26,21 @@ console.log('out:', outFilePath);
     width: width,
     height: height,
   });
+
+  // Create/output PNG
   await page.screenshot({
-    path: outFilePath
+    path: outFilePathPNG
   });
+
+  // Create/output PDF
+  await page.pdf({
+    path: outFilePathPDF,
+    printBackground: true,
+    preferCSSPageSize: true,
+    width: width,
+    height: height,
+    scale: 1
+  })
+  
   await browser.close();
 })();
