@@ -4,8 +4,8 @@ const path = require('path');
 // Parse arguments...
 const currentDir = path.dirname(process.argv[1]);
 const target = process.argv[2];
-const width = parseInt(process.argv[3]) || 3800;
-const height = parseInt(process.argv[4]) || 1600;
+const width = parseInt(process.argv[3]) || 3910;
+const height = parseInt(process.argv[4]) || 1730;
 
 const baseName = path.basename(target, '.html');
 const outFilePathPNG = path.join(currentDir, '..', 'output', 'png', `${baseName}.png`);
@@ -21,7 +21,11 @@ console.log('PDF:', outFilePathPDF);
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto(`file://${target}`);
+  
+  await page.goto(`file://${target}`, {
+    waitUntil: 'networkidle0', // allow fonts, logo to load
+  });
+
   await page.setViewport({
     width: width,
     height: height,
@@ -39,8 +43,9 @@ console.log('PDF:', outFilePathPDF);
     preferCSSPageSize: true,
     width: width,
     height: height,
+    pageRanges: '1-1',
     scale: 1
   })
-  
+
   await browser.close();
 })();
