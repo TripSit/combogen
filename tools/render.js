@@ -1,27 +1,46 @@
-var Nightmare = require('nightmare');
-var nightmare = Nightmare({ show: false });
-var path = require('path');
+const puppeteer = require('puppeteer');
+const path = require('path');
 
-var target = process.argv[2];
-var width = parseInt(process.argv[3]) || 3800;
-var height = parseInt(process.argv[4]) || 1600;
+// Parse arguments...
+const currentDir = path.dirname(process.argv[1]);
+const target = process.argv[2];
+const width = parseInt(process.argv[3]) || 3800;
+const height = parseInt(process.argv[4]) || 1600;
 
-var currentDir = path.dirname(process.argv[1]);
-
-var outFilename = path.basename(target, '.html') + '.png';
-var outFilePath = path.join(currentDir, '..', 'output', 'png',  outFilename);
+const baseName = path.basename(target, '.html');
+const outFilePathPNG = path.join(currentDir, '..', 'output', 'png', `${baseName}.png`);
+const outFilePathPDF = path.join(currentDir, '..', 'output', 'pdf', `${baseName}.pdf`);
 
 console.log('Rendering...');
-// console.log('argv:', process.argv);
-console.log('target:', target);
-console.log('out:', outFilePath);
+console.log('HTML:', target);
+//console.log('argv:', process.argv);
+console.log('PNG:', outFilePathPNG);
+console.log('PDF:', outFilePathPDF);
 
-nightmare
-  .viewport(width, height)
-  .goto(`file://${target}`)
-  .wait(250)
-  .screenshot(outFilePath)
-  .end()
-  .catch(function (error) {
-    console.error('Error:', error);
+// Render assets...
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(`file://${target}`);
+  await page.setViewport({
+    width: width,
+    height: height,
   });
+
+  // Create/output PNG
+  await page.screenshot({
+    path: outFilePathPNG
+  });
+
+  // Create/output PDF
+  await page.pdf({
+    path: outFilePathPDF,
+    printBackground: true,
+    preferCSSPageSize: true,
+    width: width,
+    height: height,
+    scale: 1
+  })
+  
+  await browser.close();
+})();
