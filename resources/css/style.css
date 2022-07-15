@@ -86,8 +86,8 @@ header {
 #title {
   font-family: serenity, 'Open Sans', sans-serif;
   color: #FFFFFF;
-  transform: translateY(5%);
-  font-size: 10.25rem;
+  transform: translateY(15%);
+  font-size: 96pt;
   text-align: right;
   font-weight: 600 !important; /* demi-bold */
   margin: 0 auto;
@@ -124,7 +124,7 @@ footer {
   position: relative;
   margin: 1.70% auto 0;
   width: 100%;
-  height: 10%;
+  height: 8%;
   color: #a9a8a8;
   font-family: serenity, 'Open Sans', sans-serif;
   font-weight: 500;
@@ -139,16 +139,17 @@ footer a {
 }
 
 #legend {
-  min-width: 12%;
-  float: left;
+  min-width: 5%;
+  margin-right: 8%;
+  float: right;
 }
 
 #status {
-  font-family: serenity, 'Open Sans', sans-serif;
+  font-family: 'serenity', 'Open Sans', sans-serif;
   color: #898989;
   padding-top: 15px;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: left;
   font-weight: 500;
 }
@@ -181,7 +182,7 @@ footer a {
   margin: 10px 0;
   padding-bottom: 10px;
   text-align: center;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.4); */
   font-size: 1.6rem;
 }
 
@@ -203,7 +204,7 @@ footer .qr {
   top: 0;
   width: 8%;
   font-size: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'serenity', 'Open Sans', sans-serif;
 }
 
 footer .qr:first-child {
@@ -221,11 +222,6 @@ footer .qr img {
   width: 70%;
 }
 
-h4 {
-  font-size: 32px;
-  font-weight: normal;
-}
-
 footer .qr:last-child {
   right: 0;
   float: right;
@@ -238,27 +234,30 @@ footer .qr:last-child h3 {
 footer .qr h3 {
   margin: 15px 0 0 0;
   font-size: 1.8rem;
-  font-family: serenity, 'Open Sans', sans-serif;
+  color: #fff;
+  font-family: 'serenity', 'Open Sans', sans-serif;
   font-weight: 600 !important;
   text-align: center;
   width: 70%;
 }
 
-footer h4 {
-  margin: 0.7em 0;
-  padding: 0;
-}
-
-footer #disclaimer #squishy {
-  letter-spacing: -1px;
-  font-size: 1.755rem;
-
+footer #disclaimer h4 {
+  margin: 0 0 1em 0;
+  font-size: 36pt;
+  font-weight: 500;
+  color: #fff;
 }
 
 footer #disclaimer {
-  position: absolute;
-  text-align: right;
-  width: 70%;
-  right: 8%;
+  position: relative;
+  float: left;
+  text-align: justify;
+  text-justify: inter-word;
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  /* right: 8%; */
   top: 0;
+  font-size: 24pt;
 }

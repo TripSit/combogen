@@ -20,10 +20,10 @@
             <img src="{{ cfg.rel_resources_path }}/img/mobile_combo_app_qr.svg" alt="app">
             <h3>{{ cfg.translate(lang, "app") }}</h3>
         </div>
+        <div id="disclaimer">{% include "disclaimer-" + lang + ".html" %}</div>
         <div id="legend">
             {% include "legend.html" %}
         </div>
-        <div id="disclaimer">{% include "disclaimer-" + lang + ".html" %}</div>
         <div class="qr">
             <img src="{{ cfg.rel_resources_path }}/img/support_qr.svg" alt="support">
             <h3>{{ cfg.translate(lang, "support") }}</h3>
