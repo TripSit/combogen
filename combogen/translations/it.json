@@ -4,7 +4,7 @@
   "support": "Suoport Us",
   "drugs": {
     "lsd": "LSD",
-    "mushrooms": "Funghi allucinogeni",
+    "mushrooms": "Psilocibina",
     "dmt": "DMT",
     "mescaline": "Mescalina",
     "dox": "DOx",
@@ -16,7 +16,7 @@
     "ketamine": "Ketamina",
     "mxe": "MXE",
     "dxm": "DXM",
-    "nitrous": "Ossido di Azoto",
+    "nitrous": "Nitroso",
     "amphetamines": "Anfetamine",
     "mdma": "MDMA",
     "cocaine": "Cocaina",
@@ -31,7 +31,7 @@
   },
   "interactions": {
     "low risk & synergy": "Basso Rischio e Sinergia",
-    "low risk & no synergy": "Basso Rischio e Nessuna Sinergia",
+    "low risk & no synergy": "Basso Rischio",
     "low risk & decrease": "Basso Rischio e Riduzione",
     "caution": "Attenzione",
     "unsafe": "Non Sicuro",
