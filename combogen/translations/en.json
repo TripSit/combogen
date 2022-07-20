@@ -1,6 +1,6 @@
 {
   "title": "Guide to Drug Combinations",
-  "app": "Android App",
+  "app": "www.TripSit.Me",
   "support": "Support Us",
   "drugs": {
     "lsd": "LSD",
@@ -25,7 +25,7 @@
     "ghb/gbl": "GHB/GBL",
     "opioids": "Opioids",
     "tramadol": "Tramadol",
-    "benzodiazepines": "Benzodiazepines",
+    "benzodiazepines": "Benzos",
     "maois": "MAOIs",
     "ssris": "SSRIs"
   },

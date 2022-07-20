@@ -21,7 +21,7 @@ class ChartGenerator(object):
         template = self._env.get_template('combo-chart-full.html')
 
         time_generated = datetime.now(timezone.utc)
-        status_msg = "Version {}<br>".format(self._config.version)
+        status_msg = "Version {} — ".format(self._config.version)
         status_msg += "Generated on {} at {} UTC".format(time_generated.strftime("%d %b %Y"),
                                                          time_generated.strftime("%H:%M"))
 

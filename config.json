@@ -1,6 +1,6 @@
 {
   "url": "http://tripsit.me/combo_beta.json",
-  "version": "4.0",
+  "version": "5.0.0",
   "tableOrder": [
     [
       "LSD",
@@ -59,8 +59,8 @@
     "fallback": ["unknown", "fa-question"]
   },
   "chart": {
-    "width": 3800,
-    "height": 1600,
+    "width": 3910,
+    "height": 1730,
     "htmlRelativeResources": "../../resources"
   }
 }
