@@ -1,6 +1,6 @@
 .idea/
 __pycache__/
-drug-combinations*
+#drug-combinations*
 npm-debug.log
 node_modules/
 .vscode/settings.json
