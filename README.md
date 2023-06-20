@@ -1,7 +1,7 @@
 ## Dependencies
 - Python 3, Chrome, and Node.js are required. If using `WSL`, [see this link](https://scottspence.com/posts/use-chrome-in-ubuntu-wsl)!
 - Install required python modules `pip3 install requests jinja2`
-- Make sure `python` (or `python3`), `node`, `npm`, and `chrome` are in your `PATH`.
+- Make sure `python` (or `python3`), `node`, `npm`, and `google-chrome` are in your `PATH`.
 
 ## How to run
 - `git clone` this repo
