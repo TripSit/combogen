@@ -1,0 +1,78 @@
+{
+  "url": "https://github.com/TripSit/drugs/blob/main/combos.json",
+  "local_file": "combos2.json",
+  "github_url": "https://github.com/TripSit/drugs/blob/main/combos.json",
+  "version": "6.0.0",
+  "languages": [
+    "en",
+    "es",
+    "de",
+    "fr",
+    "it",
+    "pl",
+    "ru"
+  ],
+  "current_language": "en",
+  "tableOrder": [
+    [
+      "LSD",
+      "Mushrooms",
+      "DMT",
+      "Mescaline",
+      "DOx",
+      "NBOMes",
+      "2C-x",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "Cannabis"
+    ],
+    [
+      "Ketamine",
+      "MXE",
+      "DXM",
+      "Nitrous"
+    ],
+    [
+      "Amphetamines",
+      "MDMA",
+      "Cocaine",
+      "Caffeine"
+    ],
+    [
+      "Alcohol",
+      "GHB/GBL",
+      "Opioids",
+      "Tramadol",
+      "Benzodiazepines"
+    ],
+    [
+      "MAOIs",
+      "SSRIs"
+    ]
+  ],
+  "groupNames": [
+    "psychedelic",
+    "dissociative",
+    "stimulant",
+    "depressant",
+    "antidepressant"
+  ],
+  "rewriteInteraction": {
+    "serotonin syndrome": "dangerous"
+  },
+  "interactionClass": {
+    "low risk & synergy": ["synergy", "fa-arrow-up"],
+    "low risk & no synergy": ["safe", "fa-dot-circle-o"],
+    "low risk & decrease": ["decrease", "fa-arrow-down"],
+    "caution": ["caution", "fa-warning"],
+    "unsafe": ["unsafe", "fa-heartbeat"],
+    "dangerous": ["dangerous", "fa-times"],
+    "serotonin syndrome": ["serotoninsyndrome", "fa-flash"],
+    "fallback": ["unknown", "fa-question"]
+  },
+  "chart": {
+    "width": 3910,
+    "height": 1730,
+    "htmlRelativeResources": "../../resources"
+  }
+}

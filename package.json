@@ -1,23 +1,25 @@
 {
-  "name": "combogen",
-  "version": "1.0.0",
-  "description": "Generate PNG and PDF files from HTML combo charts",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "puppeteer": "^14.3.0",
-    "underscore": "^1.9.1"
-  },
-  "devDependencies": {},
+  "name": "chart-generator",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TripSit/combogen.git"
+  "dependencies": {
+    "next": "14.0.1",
+    "next-i18next": "^15.0.0",
+    "react": "^18",
+    "react-dom": "^18"
   },
-  "author": "shiinko",
-  "bugs": {
-    "url": "https://github.com/TripSit/combogen/issues"
-  },
-  "homepage": "https://github.com/TripSit/combogen#readme"
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "typescript": "^5"
+  }
 }
