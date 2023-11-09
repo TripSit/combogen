@@ -27,21 +27,23 @@ except FileExistsError:
     pass
 
 try:
+    print('> Starting chart generation...')
     chart_generator = ChartGenerator()
     chart_generator.debug()
 
-    for file in os.listdir(TRANSLATIONS_ROOT):
-        if (file.endswith(".json")):
-            lang = file.split(".")[0]
-            chart = chart_generator.generate(lang)
+    # for file in os.listdir(TRANSLATIONS_ROOT):
+    #     if (file.endswith(".json")):
+    #         lang = file.split(".")[0]
+    lang = 'en'
+    chart = chart_generator.generate(lang)
 
-            htmlChartPath = os.path.join(HTML_PATH, 'drug-combinations-{}.html'.format(lang))
+    htmlChartPath = os.path.join(HTML_PATH, 'drug-combinations-{}.html'.format(lang))
 
-            with open(htmlChartPath, 'w+') as f:
-                f.write(chart)
+    with open(htmlChartPath, 'w+') as f:
+        f.write(chart)
 
-            print('Generating PNG for {}'.format(lang))
-            subprocess.run(['node', RENDER_SCRIPT_PATH, htmlChartPath, str(config.width), str(config.height)])
+    print('Generating PNG for {}'.format(lang))
+    subprocess.run(['node', RENDER_SCRIPT_PATH, htmlChartPath, str(config.width), str(config.height)])
 
 except KeyboardInterrupt:
     print('> Script aborted prematurely !')

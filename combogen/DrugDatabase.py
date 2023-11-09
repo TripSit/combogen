@@ -1,11 +1,16 @@
 import requests
 import json
 from collections import OrderedDict
+import os
 
 
 class DrugDatabase(object):
     def __init__(self, config):
-        self._combos = requests.get(config.url).json()
+        if config.local_file:
+            with open(config.local_file) as f:
+                self._combos = json.load(f)
+        else:
+            self._combos = requests.get(config.url).json()
         self._config = config
         self._drug_groups = []
         self.load_groups()
@@ -41,13 +46,16 @@ class DrugDatabase(object):
     def interaction(self, drug_a, drug_b, strict=False):
         drug_a_name = drug_a.lower() if isinstance(drug_a, str) else drug_a.name.lower()
         drug_b_name = drug_b.lower() if isinstance(drug_b, str) else drug_b.name.lower()
+        
+        # print(self._combos)
         try:
-            interaction = self._combos[drug_a_name][drug_b_name]['status']
+            interaction = self._combos[drug_a_name]['combos'][drug_b_name]['status']
             return self._config.rewrite_interaction(interaction)
-        except KeyError:
+        except KeyError as e:
             if not strict:
+                print(drug_a_name, drug_a_name, e)
                 try:
-                    interaction = self._combos[drug_b_name][drug_a_name]['status']
+                    interaction = self._combos[drug_b_name]['combos'][drug_a_name]['status']
                     return self._config.rewrite_interaction(interaction)
                 except KeyError:
                     return 'NXDRUG'

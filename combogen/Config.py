@@ -8,7 +8,7 @@ class Config(object):
     def __init__(self, path):
         with open(path) as f:
             self._config = json.load(f)
-
+        print(self._config)
         self._translations = dict()
         for file in os.listdir(TRANSLATIONS_DIR):
             if (file.endswith(".json")):
@@ -24,7 +24,11 @@ class Config(object):
     @property
     def url(self):
         return self._config['url']
-
+    
+    @property
+    def local_file(self):
+        return self._config['local_file']
+    
     @property
     def version(self):
         return self._config['version']
