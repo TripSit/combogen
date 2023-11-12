@@ -1,7 +1,7 @@
 {
   "url": "https://github.com/TripSit/drugs/blob/main/combos.json",
   "local_file": "combos2.json",
-  "github_url": "https://github.com/TripSit/drugs/blob/main/combos.json",
+  "github_url": "https://raw.githubusercontent.com/TripSit/drugs/main/drugs.json",
   "version": "6.0.0",
   "languages": [
     "en",
@@ -61,18 +61,18 @@
     "serotonin syndrome": "dangerous"
   },
   "interactionClass": {
-    "low risk & synergy": ["synergy", "fa-arrow-up"],
-    "low risk & no synergy": ["safe", "fa-dot-circle-o"],
-    "low risk & decrease": ["decrease", "fa-arrow-down"],
-    "caution": ["caution", "fa-warning"],
-    "unsafe": ["unsafe", "fa-heartbeat"],
-    "dangerous": ["dangerous", "fa-times"],
-    "serotonin syndrome": ["serotoninsyndrome", "fa-flash"],
-    "fallback": ["unknown", "fa-question"]
+    "low risk & synergy": ["synergy", "arrow-up"],
+    "low risk & no synergy": ["safe", "circle-dot"],
+    "low risk & decrease": ["decrease", "arrow-down"],
+    "caution": ["caution", "triangle-exclamation"],
+    "unsafe": ["unsafe", "heart-pulse"],
+    "dangerous": ["dangerous", "xmark"],
+    "serotonin syndrome": ["serotoninsyndrome", "bolt"],
+    "fallback": ["unknown", "question"]
   },
   "chart": {
-    "width": 3910,
-    "height": 1730,
+    "width": 782,
+    "height": 346,
     "htmlRelativeResources": "../../resources"
   }
 }

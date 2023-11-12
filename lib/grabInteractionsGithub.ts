@@ -1,6 +1,3 @@
-// lib/grabInteractionsGithub.ts
-import { GITHUB_URL } from '@/lib/config'; // adjust the path to where your config file is located
-
 export async function grabInteractionsGithub(url: string) {
   try {
     const response = await fetch(url);

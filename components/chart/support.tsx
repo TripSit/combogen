@@ -7,10 +7,17 @@ export interface Support {
 }
 
 const Support: React.FC<Support>  = ( {text} ) => {
-    console.log(text)
     return (
         <div className={styles.qr}>
-            <Image src="/support_qr.svg" alt="support" width={100} height={100} />
+            <div className={styles.qrImage}>
+                <Image
+                    src="/support_qr.svg"
+                    alt="support"
+                    layout="fill"
+                    objectFit="contain"
+                    quality={100}
+                />
+            </div>
         <h3 className={styles.qrH3}>{text}</h3>
         </div>
     )
