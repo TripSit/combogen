@@ -6,7 +6,7 @@ TRANSLATIONS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'tran
 
 class Config(object):
     def __init__(self, path):
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             self._config = json.load(f)
 
         self._translations = dict()
@@ -14,7 +14,7 @@ class Config(object):
             if (file.endswith(".json")):
                 lang = file.split(".")[0].lower()
 
-                with open(os.path.join(TRANSLATIONS_DIR, file)) as f:
+                with open(os.path.join(TRANSLATIONS_DIR, file), encoding="utf-8") as f:
                     self._translations[lang] = json.load(f)
 
     @property

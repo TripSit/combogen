@@ -1,6 +1,6 @@
 {
-  "url": "https://github.com/TripSit/drugs/blob/main/combos.json",
-  "version": "5.0.0",
+  "url": "https://raw.githubusercontent.com/TripSit/drugs/main/combos.json",
+  "version": "5.0.1",
   "tableOrder": [
     [
       "LSD",
@@ -17,7 +17,7 @@
     [
       "Ketamine",
       "MXE",
-      "DXM",
+      "Dextromethorphan",
       "Nitrous"
     ],
     [
@@ -60,7 +60,7 @@
   },
   "chart": {
     "width": 3910,
-    "height": 1730,
+    "height": 1675,
     "htmlRelativeResources": "../../resources"
   }
 }

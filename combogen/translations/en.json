@@ -1,7 +1,7 @@
 {
   "title": "Guide to Drug Combinations",
   "app": "www.TripSit.Me",
-  "support": "Support Us",
+  "support": "Android App",
   "drugs": {
     "lsd": "LSD",
     "mushrooms": "Mushrooms",
@@ -15,7 +15,7 @@
     "cannabis": "Cannabis",
     "ketamine": "Ketamine",
     "mxe": "MXE",
-    "dxm": "DXM",
+    "dextromethorphan": "DXM",
     "nitrous": "Nitrous",
     "amphetamines": "Amphetamines",
     "mdma": "MDMA",

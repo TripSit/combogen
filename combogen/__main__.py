@@ -37,7 +37,7 @@ try:
 
             htmlChartPath = os.path.join(HTML_PATH, 'drug-combinations-{}.html'.format(lang))
 
-            with open(htmlChartPath, 'w+') as f:
+            with open(htmlChartPath, 'w+', encoding='utf-8') as f:
                 f.write(chart)
 
             print('Generating PNG for {}'.format(lang))
