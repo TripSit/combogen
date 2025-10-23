@@ -1,49 +1,26 @@
-.psychedelic {
-  background-color: #274e13;
-}
+:root {
+  --psychedelic-color: #386721;
+  --dissociative-color: #271a5c;
+  --stimulant-color: #8c0000;
+  --depressant-color: #104e7c;
+  --antidepressant-color: #8f500d;
 
-.dissociative {
-  background-color: #20124d;
-}
+  --safe-color: #35afff;
+  --synergy-color: #0077b3;
+  --decrease-color: #004c80;
+  --caution-color: #e6b322;
+  --unsafe-color: #e07b20;
+  --dangerous-color: #d12128;
+  --unknown-color: #888888;
 
-.stimulant {
-  background-color: #660000;
-}
+  --primary-bg: #000000;
+  --grid-line-color: #000000;
+  --text-white: #ffffff;
+  --text-light-grey: #a9a8a8;
+  --text-lighter-grey: #c3c3c3;
 
-.depressant {
-  background-color: #073763;
-}
-
-.antidepressant {
-  background-color: #783f04;
-}
-
-.safe {
-  background-color: #35afff;
-}
-
-.synergy {
-  background-color: #0a89dd;
-}
-
-.decrease {
-  background-color: #006cb3;
-}
-
-.caution {
-  background-color: #d5c625;
-}
-
-.unsafe {
-  background-color: #d98427;
-}
-
-.dangerous {
-  background-color: #d12128;
-}
-
-.unknown {
-  background-color: #6f6f6f;
+  --font-body: 'Open Sans', 'Univers', sans-serif;
+  --font-header: serenity, 'Open Sans', sans-serif;
 }
 
 * {
@@ -51,25 +28,27 @@
 }
 
 html {
+  font-size: 16px;
   box-sizing: border-box;
   overflow: hidden;
-  font-size: 16px;
 }
 
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--primary-bg);
+  color: var(--text-white);
 }
 
 #container {
   position: relative;
-  background-color: #000000;
+  background-color: var(--primary-bg);
   padding: 0.5% 127px 0 127px;
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
 }
 
 header {
@@ -84,56 +63,86 @@ header {
 }
 
 #title {
-  font-family: serenity, 'Open Sans', sans-serif;
-  color: #FFFFFF;
+  font-family: var(--font-header);
+  color: var(--text-white);
   transform: translateY(15%);
   font-size: 96pt;
   text-align: right;
-  font-weight: 600 !important; /* demi-bold */
+  font-weight: 600 !important;
   margin: 0 auto;
 }
 
 #chart {
-  font-family: 'Open Sans', 'Univers', sans-serif;
+  font-family: var(--font-body);
   height: 65%;
   max-height: 65%;
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 2px;
 }
 
 #chart td {
   font-size: 1.1rem;
-  color: #FFFFFF;
-  border-radius: 1px;
+  color: var(--text-white);
   text-align: center;
+  padding: 0;
   overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* #chart td span {
-  padding: 0 1px
+#chart tr:first-child td:nth-of-type(2) {
+  border-top-left-radius: 6px;
 }
-*/
+#chart tr:nth-of-type(2) td:first-child {
+  border-top-left-radius: 6px;
+}
+#chart tr:first-child td:nth-last-of-type(2) {
+  border-top-right-radius: 6px;
+}
+#chart tr:nth-of-type(2) td:last-child {
+  border-top-right-radius: 6px;
+}
+#chart tr:nth-last-of-type(2) td:first-child {
+  border-bottom-left-radius: 6px;
+}
+#chart tr:last-child td:nth-of-type(2) {
+  border-bottom-left-radius: 6px;
+}
+#chart tr:last-child td:nth-last-of-type(2) {
+  border-bottom-right-radius: 6px;
+}
+#chart tr:nth-last-of-type(2) td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+#chart td:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
 
 .fa {
   text-shadow: 0 0 3px black;
 }
+
 
 footer {
   position: relative;
   margin: 1.70% auto 0;
   width: 100%;
   height: 8%;
-  color: #a9a8a8;
-  font-family: serenity, 'Open Sans', sans-serif;
+  color: var(--text-light-grey);
+  font-family: var(--font-header);
   font-weight: 500;
-
 }
 
 footer b,
 footer a {
-  color: #c3c3c3;
+  color: var(--text-lighter-grey);
   text-decoration: none;
   font-weight: 700;
 }
@@ -145,7 +154,7 @@ footer a {
 }
 
 #status {
-  font-family: 'serenity', 'Open Sans', sans-serif;
+  font-family: var(--font-header);
   color: #898989;
   padding-top: 15px;
   display: inline-block;
@@ -161,9 +170,9 @@ footer a {
   justify-content: space-between;
   right: 0;
   top: 0;
-  font-family: 'serenity', 'Open Sans', sans-serif;
+  font-family: var(--font-header);
   font-weight: 500;
-  color: white;
+  color: var(--text-white);
 }
 
 .legend-card {
@@ -174,6 +183,8 @@ footer a {
   flex-flow: column nowrap;
   align-items: center;
   margin: 2.5px;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .legend-icon {
@@ -182,7 +193,6 @@ footer a {
   margin: 10px 0;
   padding-bottom: 10px;
   text-align: center;
-  /* border-bottom: 2px solid rgba(255, 255, 255, 0.4); */
   font-size: 1.6rem;
 }
 
@@ -193,7 +203,7 @@ footer a {
   margin: -7px 25px;
   padding: 7px 0;
   text-align: center;
-  color: white;
+  color: var(--text-white);
   font-size: 1.6rem;
   font-weight: 500;
   background-color: rgba(0, 0, 0, 0.3);
@@ -204,7 +214,7 @@ footer .qr {
   top: 0;
   width: 8%;
   font-size: 2rem;
-  font-family: 'serenity', 'Open Sans', sans-serif;
+  font-family: var(--font-header);
 }
 
 footer .qr:first-child {
@@ -216,15 +226,11 @@ footer .qr:last-child {
   position: absolute;
   text-align: right;
   float: right;
+  right: 0;
 }
 
 footer .qr img {
   width: 70%;
-}
-
-footer .qr:last-child {
-  right: 0;
-  float: right;
 }
 
 footer .qr:last-child h3 {
@@ -234,8 +240,8 @@ footer .qr:last-child h3 {
 footer .qr h3 {
   margin: 15px 0 0 0;
   font-size: 1.8rem;
-  color: #fff;
-  font-family: 'serenity', 'Open Sans', sans-serif;
+  color: var(--text-white);
+  font-family: var(--font-header);
   font-weight: 600 !important;
   text-align: center;
   width: 70%;
@@ -245,7 +251,7 @@ footer #disclaimer h4 {
   margin: 0 0 1em 0;
   font-size: 36pt;
   font-weight: 500;
-  color: #fff;
+  color: var(--text-white);
 }
 
 footer #disclaimer {
@@ -257,7 +263,20 @@ footer #disclaimer {
   padding: 0;
   margin: 0;
   width: 50%;
-  /* right: 8%; */
   top: 0;
   font-size: 24pt;
 }
+
+.psychedelic { background-color: var(--psychedelic-color); }
+.dissociative { background-color: var(--dissociative-color); }
+.stimulant { background-color: var(--stimulant-color); }
+.depressant { background-color: var(--depressant-color); }
+.antidepressant { background-color: var(--antidepressant-color); }
+
+.safe { background-color: var(--safe-color); }
+.synergy { background-color: var(--synergy-color); }
+.decrease { background-color: var(--decrease-color); }
+.caution { background-color: var(--caution-color); }
+.unsafe { background-color: var(--unsafe-color); }
+.dangerous { background-color: var(--dangerous-color); }
+.unknown { background-color: var(--unknown-color); }

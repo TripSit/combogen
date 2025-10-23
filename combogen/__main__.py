@@ -1,4 +1,4 @@
-from combogen.ChartGenerator import ChartGenerator, PROJECT_ROOT, TEMPLATE_ROOT, TRANSLATIONS_ROOT,  TOOLS_ROOT
+from combogen.ChartGenerator import ChartGenerator, PROJECT_ROOT, TEMPLATE_ROOT, TRANSLATIONS_ROOT, TOOLS_ROOT
 from combogen.Config import Config
 
 import os
