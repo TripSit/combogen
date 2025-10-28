@@ -189,9 +189,9 @@ footer a {
   flex: 1 1 0;
   width: 100%;
   margin: 10px 0;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .legend-content {
@@ -246,7 +246,7 @@ footer .qr h3 {
 }
 
 footer #disclaimer h4 {
-  margin: 0 0 1em 0;
+  margin: 0 0 0.2em 0;
   font-size: 36pt;
   font-weight: 500;
   color: var(--text-white);
@@ -254,15 +254,15 @@ footer #disclaimer h4 {
 
 footer #disclaimer {
   position: relative;
+  white-space: pre-wrap;
   float: left;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
   display: block;
   padding: 0;
   margin: 0;
-  width: 50%;
+  width: 60%;
   top: 0;
-  font-size: 24pt;
+  font-size: 20pt;
 }
 
 .psychedelic { background-color: var(--psychedelic-color); }
