@@ -18,10 +18,12 @@
       "Ketamine",
       "MXE",
       "Dextromethorphan",
+      "Diphenhydramine",
       "Nitrous"
     ],
     [
       "Amphetamines",
+      "Mephedrone",
       "MDMA",
       "Cocaine",
       "Caffeine"
@@ -34,6 +36,8 @@
       "Benzodiazepines"
     ],
     [
+      "Pregabalin",
+      "Lithium",
       "MAOIs",
       "SSRIs"
     ]

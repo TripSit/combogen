@@ -16,8 +16,10 @@
     "ketamine": "Ketamine",
     "mxe": "MXE",
     "dextromethorphan": "DXM",
+    "diphenhydramine": "DPH",
     "nitrous": "Nitrous",
     "amphetamines": "Amphetamines",
+    "mephedrone": "4-MMC",
     "mdma": "MDMA",
     "cocaine": "Cocaine",
     "caffeine": "Caffeine",
@@ -26,6 +28,7 @@
     "opioids": "Opioids",
     "tramadol": "Tramadol",
     "benzodiazepines": "Benzos",
+    "lithium": "Lithium",
     "maois": "MAOIs",
     "ssris": "SSRIs"
   },

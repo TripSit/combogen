@@ -117,18 +117,16 @@ header {
 #chart tr:nth-last-of-type(2) td:last-child {
   border-bottom-right-radius: 6px;
 }
-
-#chart td:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  z-index: 10;
+#chart tr:nth-child(even) td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
-
+#chart tr:nth-child(odd) td {
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
 
 .fa {
   text-shadow: 0 0 3px black;
 }
-
 
 footer {
   position: relative;
