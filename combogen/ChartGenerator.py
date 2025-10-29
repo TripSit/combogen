@@ -24,6 +24,9 @@ class ChartGenerator(object):
         status_msg = "Version {} — ".format(self._config.version)
         status_msg += "Generated on {} at {} UTC".format(time_generated.strftime("%d %b %Y"),
                                                          time_generated.strftime("%H:%M"))
+        
+        if self._db._data_update_time is not Ellipsis: # Check if we even have the last update time
+            status_msg += f" — Data as of {self._db._data_update_time.strftime("%d %b %Y")}"
 
         return template.render(status=status_msg, lang=lang, db=self._db, cfg=self._config)
 

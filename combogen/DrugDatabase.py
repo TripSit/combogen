@@ -1,11 +1,27 @@
 import requests
-import json
 from collections import OrderedDict
+from datetime import datetime
 
 
 class DrugDatabase(object):
     def __init__(self, config):
         self._combos = requests.get(config.url).json()
+
+        # Uses the config.url to find the last repository commit to use it's time 
+        # as the last update of the combo data
+        # is Ellipsis if the config.url is not a GitHub raw link
+        # the result is used in the result page footer
+        try:
+            self._data_update_time = datetime.fromisoformat(requests.get(
+                f"https://api.github.com/repos/{'/'.join(config.url.split('/')[3:5])}/commits?path=drugs.json&page=1&per_page=1"
+            ).json()[0]['commit']['committer']['date'])
+        except requests.RequestException as e:
+            print("""Failed to get time of the last source data update
+                  The source URL (in config.url) is most likely not a file link stored on GitHub. 
+                  You can safely ignore this error or read the README for troubleshooting information.
+                  Error message: """, e)
+            self._data_update_time = Ellipsis
+
         self._config = config
         self._drug_groups = []
         self.load_groups()
